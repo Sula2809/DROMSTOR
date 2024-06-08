@@ -1,0 +1,905 @@
+[
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": false,
+    "recommendation": true
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": false,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": false,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": true
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  },
+  {
+    "img": [
+      "/productImages/image1.png",
+      "/productImages/image2.png",
+      "/productImages/image3.png",
+      "/productImages/image1.png",
+      "/productImages/image2.png"
+    ],
+    "colors": [
+      "/productImages/cyan.png",
+      "/productImages/gray.png",
+      "/productImages/majenta.png",
+      "/productImages/Red.png",
+      "/productImages/cyan.png"
+    ],
+    "materials": [
+      "/productImages/back1.jpeg",
+      "/productImages/back2.jpeg",
+      "/productImages/back3.jpeg",
+      "/productImages/back4.png",
+      "/productImages/back2.png"
+    ],
+    "descriptions": [
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      },
+      {
+        "title": "Общее описание",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis incidunt ipsa nam quam rerum! Commodi error impedit inventore laborum maiores obcaecati quis reprehenderit sapiente similique voluptate! A asperiores assumenda at autem culpa doloribus eveniet, illum maiores natus, nostrum officia optio placeat quaerat quibusdam quos rerum sint soluta velit vero voluptate!"
+      }
+    ],
+    "name": "Арифлейм",
+    "price": 12000,
+    "isInCart": true,
+    "isInFavorite": true,
+    "new": true,
+    "recommendation": false
+  }
+]

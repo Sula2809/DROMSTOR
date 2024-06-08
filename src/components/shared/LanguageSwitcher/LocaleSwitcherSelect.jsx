@@ -1,49 +1,54 @@
 "use client";
-import React, { useTransition } from "react";
-import { useLocale } from "next-intl";
+import clsx from "clsx";
+import { useParams } from "next/navigation";
+import { useTransition } from "react";
+import { useRouter, usePathname } from "@/navigation";
+import { locales } from "@/config";
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Image from "next/image";
-import { useRouter, usePathname } from "@/navigation";
-import { useParams } from "next/navigation";
+import { EarthIcon } from "@/components/shared/Icons/EarthIcon";
 
-export const LanguageSwitcher = () => {
+export default function LocaleSwitcherSelect() {
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
   const params = useParams();
-  const locale = useLocale();
-  const router = useRouter();
-  const selectValue = (
-    <Image
-      src="/icons/earth.svg"
-      alt="switchLanguage"
-      width={78}
-      height={78}
-      className="size-12 rounded-full p-1"
-    />
-  );
+  const earth = <EarthIcon />;
 
-  const onLocaleChange = (e) => {
-    console.log(e.target.value);
-    router.replace({ pathname, params }, { locale: e.target.value });
-  };
+  function onSelectChange(event) {
+    console.log(params);
+    // const nextLocale = event.target.value;
+    startTransition(() => {
+      router.replace(
+        // @ts-expect-error -- TypeScript will validate that only known `params`
+        // are used in combination with a given `pathname`. Since the two will
+        // always match for the current route, we can skip runtime checks.
+        { pathname, params },
+        { locale: event },
+      );
+    });
+  }
 
   return (
-    <select
-      value={locale}
-      onChange={onLocaleChange}
-      className="flex h-10 w-20 items-center justify-between rounded-md border border-input
-      bg-background px-2 text-sm text-foreground ring-offset-background
-      placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring
-      focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1"
-    >
-      <option value="en">english</option>
-      <option value="ru">russian</option>
-    </select>
+    <Select onValueChange={onSelectChange} disabled={isPending}>
+      <SelectTrigger className="w-full border-none max-w-[40px] p-0">
+        <SelectValue placeholder={earth}>
+          {earth} {/* Переместите иконку сюда */}
+        </SelectValue>
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectItem value="ru">Russian</SelectItem>
+          <SelectItem value="en">English</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
-};
+}
