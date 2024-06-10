@@ -1,8 +1,5 @@
 import { BreadCrumb } from "@/components/shared/BreadCrumb/BreadCrumb";
 import { decodeURL } from "@/shared/services/decodeURL";
-import { CatalogFilter } from "@/components/shared/Catalog/CatalogFilter/CatalogFilter";
-import { SortBy } from "@/components/shared/Catalog/SortBy/SortBy";
-import { CatalogContent } from "@/components/shared/Catalog/CatalogContent/CatalogContent";
 import { CatalogDesktop } from "@/components/shared/Catalog/CatalogDesktop";
 import { CatalogMobile } from "@/components/shared/Catalog/CatalogMobile";
 

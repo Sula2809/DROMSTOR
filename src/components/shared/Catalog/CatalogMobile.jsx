@@ -1,6 +1,6 @@
 import { SortByMobile } from "@/components/shared/Catalog/SortBy/SortByMobile";
 import { cn } from "@/lib/utils";
-import { CatalogFilterMobile } from "@/components/shared/Catalog/CatalogFilter/CatalogFilterMobile";
+import { CatalogFilterMobile } from "./CatalogFilter/CatalogFIlterMobile";
 import { CatalogContent } from "@/components/shared/Catalog/CatalogContent/CatalogContent";
 
 export const CatalogMobile = ({ className, name }) => {
