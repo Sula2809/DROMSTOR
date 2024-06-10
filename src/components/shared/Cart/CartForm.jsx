@@ -9,10 +9,7 @@ export const CartForm = ({ favorites }) => {
   };
   return (
     <div>
-      <div className={`text-end text-body3 font-normal text-button pr-4`}>
-        {favorites.length} товара
-      </div>
-      <div className={`shadow-2xl`}>
+      <div className={`md:shadow-2xl`}>
         <div className={`space-y-4 p-3`}>
           {favorites?.map((item, index) => (
             <div key={index} className={`justify-between flex`}>

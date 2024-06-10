@@ -18,16 +18,34 @@ export const HeaderNav = () => {
       {isCategoryLoading ? (
         <div className="flex justify-center items-center bg-button-hover h-16 w-full"></div>
       ) : (
-        <ul className={`flex container`}>
-          {categoryData?.results?.slice(0, 6).map((category, index) => (
-            <li
-              key={category.id}
-              onClick={() => router.push(`/catalog/${category.name}`)}
-              className={`hover:bg-background_section w-full text-center text-white font-normal hover:text-button cursor-pointer ${index >= 3 ? "hidden md:block" : ""}`}
-            >
-              {category.name}
-            </li>
-          ))}
+        <ul className={`flex container justify-between`}>
+          {/*{categoryData?.results?.slice(0, 6).map((category, index) => (*/}
+          {/*  <li*/}
+          {/*    key={category.id}*/}
+          {/*    onClick={() => router.push(`/catalog/${category.name}`)}*/}
+          {/*    className={`hover:bg-background_section w-full text-center text-white font-normal hover:text-button cursor-pointer ${index >= 3 ? "hidden md:block" : ""}`}*/}
+          {/*  >*/}
+          {/*    {category.name}*/}
+          {/*  </li>*/}
+          {/*))}*/}
+          <li
+            className={`text-white`}
+            onClick={() => router.push("/catalog/Мозаика")}
+          >
+            category
+          </li>
+          <li
+            className={`text-white`}
+            onClick={() => router.push("/catalog/Мозаика")}
+          >
+            category
+          </li>
+          <li
+            className={`text-white`}
+            onClick={() => router.push("/catalog/Мозаика")}
+          >
+            category
+          </li>
         </ul>
       )}
     </div>

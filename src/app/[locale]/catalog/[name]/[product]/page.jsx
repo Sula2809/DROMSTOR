@@ -27,12 +27,12 @@ export default function ProductPage({ params }) {
 
   return (
     <div className={`container py-6`}>
-      <BreadCrumb items={productBreadCrumbs} />
-      <div className={`pt-8 flex gap-12`}>
-        <div className={`w-[45%]`}>
+      <BreadCrumb items={productBreadCrumbs} className={`hidden md:block `} />
+      <div className={`pt-8 flex flex-col md:flex-row gap-12`}>
+        <div className={`w-full md:w-[45%]`}>
           <ProductImages images={product.img} />
         </div>
-        <div className={`w-[65%]`}>
+        <div className={`w-full md:w-[65%]`}>
           <ProductContent product={product} />
         </div>
       </div>

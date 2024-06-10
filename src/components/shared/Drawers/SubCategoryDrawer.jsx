@@ -1,8 +1,9 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { XIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const SubCategoryDrawer = ({
+export const SubCategoryDrawer = ({
   isOpen,
   onClose,
   children,
@@ -10,32 +11,41 @@ const SubCategoryDrawer = ({
   duration = 500,
   classname,
 }) => {
+  const [open, setOpen] = useState(isOpen);
+
+  useEffect(() => {
+    if (isOpen) {
+      setOpen(true);
+    } else {
+      setTimeout(() => setOpen(false), duration);
+    }
+  }, [isOpen, duration]);
+
   return (
     <div
       className={cn(
-        `fixed inset-0 z-50 transition-transform duration-700 transform ease-in-out ${isOpen ? "translate-x-0 duration-500" : "-translate-x-full duration-500"}`,
+        `fixed mt-24 inset-0 z-50 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } visible ${open ? "block" : "hidden"}`,
         classname,
       )}
       style={{ ...style, transitionDuration: `${duration}ms` }}
     >
       <div
-        className="fixed inset-0 bg-black bg-opacity-50 transition-opacity  duration-500"
-        style={{ transitionDuration: 700 }}
+        className={`fixed inset-0 ${
+          isOpen ? "bg-black bg-opacity-50" : ""
+        } transition-opacity`}
+        style={{ transitionDuration: `700ms` }}
         onClick={onClose}
       ></div>
       <div
-        className="relative bg-white w-96 h-full shadow-xl px-4 pt-14 transition-transform"
+        className={`relative bg-white w-96 h-full px-4 pt-4 ${
+          isOpen ? "animate-expandWidth" : "animate-collapseWidth"
+        }`}
         style={{ transitionDuration: `${duration}ms` }}
       >
         {children}
-        {style?.left === undefined && (
-          <button onClick={onClose} className="absolute top-4 left-4">
-            <XIcon />
-          </button>
-        )}
       </div>
     </div>
   );
 };
-
-export default SubCategoryDrawer;

@@ -44,11 +44,8 @@ export const OrderForm = () => {
   }
   return (
     <div>
-      <div className={`text-end text-body3 font-normal text-button pr-4`}>
-        {favorites.length} товара
-      </div>
-      <div className={`shadow-2xl`}>
-        <div className={`space-y-4 p-8 relative`}>
+      <div className={`md:shadow-2xl`}>
+        <div className={`space-y-4 md:p-8 relative text-center`}>
           <Form {...form} className="w-full">
             <form
               onSubmit={form.handleSubmit(onSubmit)}
@@ -117,6 +114,11 @@ export const OrderForm = () => {
               </Button>
             </form>
           </Form>
+          <p
+            className={`text-blue-text text-body4 sm:text-body3 md:text-body2 lg:text-body1 font-normal`}
+          >
+            С вами свяжутся в течении 1-3 дней
+          </p>
         </div>
       </div>
     </div>

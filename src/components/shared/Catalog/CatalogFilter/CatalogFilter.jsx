@@ -15,7 +15,7 @@ export const CatalogFilter = () => {
         <h3 className={`text-h4 font-bold text-button`}>Фильтр</h3>
       </div>
       <div>
-        <Accordion type="multiple" collapsible className="w-full">
+        <Accordion type="multiple" className="w-full">
           <AccordionItem value="filter-1">
             <AccordionTrigger>Цвет</AccordionTrigger>
             <AccordionContent className={`space-y-3`}>

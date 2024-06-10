@@ -37,7 +37,7 @@
     ],
     "name": "Арифлейм",
     "price": 12000,
-    "isInCart": true,
+    "isInCart": false,
     "isInFavorite": true,
     "new": false,
     "recommendation": true

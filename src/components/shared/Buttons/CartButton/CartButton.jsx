@@ -7,7 +7,7 @@ export const CartButton = ({ item }) => {
 
   return (
     <span
-      className={`absolute top-14 right-2 max-w-[60px] max-h-[34px] bg-white rounded-2xl flex justify-center size-full cursor-pointer hover:bg-button duration-300 active:scale-[0.9]`}
+      className={`absolute border border-black top-14 right-2 max-w-[60px] max-h-[34px] bg-white rounded-2xl flex justify-center items-center size-full cursor-pointer hover:bg-button duration-300 active:scale-[0.9]`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -17,6 +17,7 @@ export const CartButton = ({ item }) => {
           stroke={isHovered ? "white" : "#5D5146"}
           fill={isHovered ? "none" : "#5D5146"}
           isFill={true}
+          isInCart={!isHovered}
         />
       ) : (
         <BugIcon stroke={isHovered ? "white" : "black"} />

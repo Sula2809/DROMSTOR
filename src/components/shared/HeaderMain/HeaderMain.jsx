@@ -1,8 +1,7 @@
 import { HeaderControls } from "@/components/shared/HeaderControls/HeaderControls";
 import { Search } from "@/components/shared/Search/Search";
 import Link from "next/link";
-import CategoryDrawer from "../Drawers/CategoryDrawer";
-import NestedDrawer from "../Drawers/CategoryDrawer";
+import { CategoryDrawer } from "../Drawers/CategoryDrawer";
 
 export const HeaderMain = () => {
   return (
@@ -10,9 +9,8 @@ export const HeaderMain = () => {
       className={`container space-y-3 flex-col md:flex-row justify-between items-center py-4`}
     >
       <div className="flex justify-between w-full items-center">
-        <div className={`flex items-center h-full`}>
+        <div className={`flex items-center justify-between gap-4 h-full`}>
           <CategoryDrawer />
-          {/*<NestedDrawer />*/}
           <div className={`h-full`}>
             <Link href={"/"} className={`max-w-[166px] max-h-[48px]`}>
               <img

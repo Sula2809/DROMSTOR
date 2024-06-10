@@ -13,13 +13,22 @@ export default function OrderSuccessPage() {
   const router = useRouter();
   return (
     <div className={`container py-5`}>
-      <BreadCrumb items={orderSuccessBreadCrumbs} />
+      <BreadCrumb
+        items={orderSuccessBreadCrumbs}
+        className={`hidden md:block `}
+      />
       <div
-        className={`mt-5 h-[800px] flex justify-center items-center size-full`}
+        className={`mt-5 h-[550px] flex justify-center items-center size-full`}
       >
         <div className={`flex justify-center flex-col items-center gap-5`}>
-          <h1 className={`text-h1 font-bold text-button`}>Ваш заказ принят!</h1>
-          <p className={`text-blue-text text-body1 font-normal`}>
+          <h1
+            className={`text-body1 sm:text-h3 md:text-h2 lg:text-h1 font-normal md:font-bold text-button`}
+          >
+            Ваш заказ принят!
+          </h1>
+          <p
+            className={`text-blue-text text-body-4 sm:text-body3 md:text-body2 lg:text-body1 font-normal`}
+          >
             С вами свяжутся в течении 1-3 дней
           </p>
           <Button

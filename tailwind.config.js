@@ -99,10 +99,20 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        expandWidth: {
+          "0%": { width: "0", opacity: "0" },
+          "100%": { width: "384px", opacity: "1" },
+        },
+        collapseWidth: {
+          "0%": { width: "384px", opacity: "1" },
+          "100%": { width: "0px", opacity: "0", visible: "hidden" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        expandWidth: "expandWidth 0.8s ease-out",
+        collapseWidth: "collapseWidth 0.8s ease-in-out forwards",
       },
     },
   },

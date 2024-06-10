@@ -8,11 +8,12 @@ import {
 import { Slash } from "lucide-react";
 import React from "react";
 import { useLocale } from "next-intl";
+import { cn } from "@/lib/utils";
 
-export const BreadCrumb = ({ items }) => {
+export const BreadCrumb = ({ items, className }) => {
   const locale = useLocale();
   return (
-    <Breadcrumb>
+    <Breadcrumb className={cn(className)}>
       <BreadcrumbList>
         {items?.map((item, index) => (
           <React.Fragment key={index}>

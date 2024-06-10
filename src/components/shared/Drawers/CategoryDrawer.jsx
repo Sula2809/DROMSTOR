@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import SubCategoryDrawer from "./SubCategoryDrawer";
+import { SubCategoryDrawer } from "./SubCategoryDrawer";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 
 const categories = [
@@ -39,12 +39,16 @@ const subCategories = {
   ],
 };
 
-const CategoryDrawer = () => {
+export const CategoryDrawer = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
   const [nestedDrawerOpen, setNestedDrawerOpen] = useState(false);
   const [activeSubCategory, setActiveSubCategory] = useState(null);
   const [subNestedDrawerOpen, setSubNestedDrawerOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsDrawerOpen((prev) => !prev);
+  };
 
   const openNestedDrawer = (category) => {
     setActiveCategory(category);
@@ -78,29 +82,31 @@ const CategoryDrawer = () => {
   }, [isDrawerOpen]);
 
   return (
-    <div>
+    <div className={`z-50`}>
       <button
-        onClick={() => setIsDrawerOpen(true)}
-        className={`bg-inherit border-none flex justify-center items-center`}
+        onClick={toggleDrawer}
+        className={`bg-inherit border-none flex flex-col justify-center items-center relative w-8 h-8`}
       >
-        {/*<Bars3Icon className="size-8" />*/}
-        <div
-          className={`size-8 flex flex-col gap-2 p-1 justify-center relative`}
-        >
-          <span className={`bg-button h-[2px] w-full rotate-45 absolute`} />
-          <span className={`bg-button h-[2px] w-full absolute hidden`} />
-          <span className={`bg-button h-[2px] w-full -rotate-45 absolute`} />
-        </div>
+        <span
+          className={`bg-button absolute top-1/4 left-0 h-[2px] w-full block transition-transform duration-1000 ${isDrawerOpen ? "rotate-45 translate-y-[10px]" : ""}`}
+        ></span>
+        <span
+          className={`bg-button absolute top-1/4 left-0 h-[2px] w-full block mt-2 transition-opacity duration-1000 ${isDrawerOpen ? "opacity-0" : ""}`}
+        ></span>
+        <span
+          className={`bg-button absolute top-1/4 left-0 h-[2px] w-full block mt-4 transition-transform duration-1000 ${isDrawerOpen ? "-rotate-45 -translate-y-[6px]" : ""}`}
+        ></span>
       </button>
       <SubCategoryDrawer
-        classname={isDrawerOpen ? "" : "hidden"}
         isOpen={isDrawerOpen}
         onClose={closeAllDrawers}
+        style={{ duration: 700 }}
       >
         <ul>
           {categories.map((item, index) => (
             <li
               key={index}
+              onMouseEnter={() => openNestedDrawer(item)}
               onClick={() => openNestedDrawer(item)}
               className="p-2 border-b cursor-pointer"
             >
@@ -109,41 +115,36 @@ const CategoryDrawer = () => {
           ))}
         </ul>
       </SubCategoryDrawer>
-      {activeCategory && (
-        <SubCategoryDrawer
-          isOpen={nestedDrawerOpen}
-          onClose={closeAllDrawers}
-          style={{ left: "384px" }}
-          duration={1000}
-        >
-          <ul>
-            {subCategories[activeCategory.id]?.map((subItem, subIndex) => (
-              <li
-                key={subIndex}
-                onClick={() => openSubNestedDrawer(subItem)}
-                className="p-2 border-b cursor-pointer"
-              >
-                {subItem.name}
-              </li>
-            ))}
-          </ul>
-        </SubCategoryDrawer>
-      )}
-      {activeSubCategory && (
-        <SubCategoryDrawer
-          isOpen={subNestedDrawerOpen}
-          onClose={closeAllDrawers}
-          style={{ left: "768px", duration: 700 }}
-          duration={1000} // Увеличиваем продолжительность
-        >
-          <div>
-            <h2>{activeSubCategory.name}</h2>
-            <p>Содержание для {activeSubCategory.name}</p>
-          </div>
-        </SubCategoryDrawer>
-      )}
+      <SubCategoryDrawer
+        isOpen={nestedDrawerOpen}
+        onClose={closeAllDrawers}
+        style={{ left: "384px", duration: 700 }}
+        duration={1000}
+      >
+        <ul>
+          {subCategories[activeCategory?.id]?.map((subItem, subIndex) => (
+            <li
+              key={subIndex}
+              onMouseEnter={() => openSubNestedDrawer(subItem)}
+              onClick={() => openSubNestedDrawer(subItem)}
+              className="p-2 border-b cursor-pointer"
+            >
+              {subItem?.name}
+            </li>
+          ))}
+        </ul>
+      </SubCategoryDrawer>
+      <SubCategoryDrawer
+        isOpen={subNestedDrawerOpen}
+        onClose={closeAllDrawers}
+        style={{ left: "768px", duration: 700 }}
+        duration={1000}
+      >
+        <div>
+          <h2>{activeSubCategory?.name}</h2>
+          <p>Содержание для {activeSubCategory?.name}</p>
+        </div>
+      </SubCategoryDrawer>
     </div>
   );
 };
-
-export default CategoryDrawer;

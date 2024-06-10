@@ -82,13 +82,19 @@ export const ProductContent = ({ product }) => {
           </Button>
         </div>
       </div>
-      <div className="space-y-12 mt-24">
-        {product.descriptions.map((item, index) => (
-          <div key={index} className="space-y-6">
-            <h3 className="text-body1 font-bold text-button">{item.title}</h3>
-            <p className="text-body1 font-normal text-button">{item.text}</p>
-          </div>
-        ))}
+      <div className={`w-full`}>
+        <div className="space-y-5 ma:space-y-12 mt-10 md:mt-24 bg-background_section py-3 px-1">
+          {product.descriptions.map((item, index) => (
+            <div key={index} className="space-y-1 md:space-y-5">
+              <h3 className="text-body3 md:text-body1 font-bold text-button">
+                {item.title}
+              </h3>
+              <p className="text-body4 md:text-body1 font-normal text-button">
+                {item.text}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
