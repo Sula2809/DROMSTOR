@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { SubCategoryDrawer } from "./SubCategoryDrawer";
-import { Bars3Icon } from "@heroicons/react/24/outline";
+import { cn } from "@/lib/utils";
 
 const categories = [
   { id: 1, name: "Категория 1" },
@@ -39,7 +39,7 @@ const subCategories = {
   ],
 };
 
-export const CategoryDrawer = () => {
+export const CategoryDrawer = ({ className }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
   const [nestedDrawerOpen, setNestedDrawerOpen] = useState(false);
@@ -82,7 +82,7 @@ export const CategoryDrawer = () => {
   }, [isDrawerOpen]);
 
   return (
-    <div className={`z-50`}>
+    <div className={cn(`z-50`, className)}>
       <button
         onClick={toggleDrawer}
         className={`bg-inherit border-none flex flex-col justify-center items-center relative w-8 h-8`}
@@ -118,7 +118,7 @@ export const CategoryDrawer = () => {
       <SubCategoryDrawer
         isOpen={nestedDrawerOpen}
         onClose={closeAllDrawers}
-        style={{ left: "384px", duration: 700 }}
+        style={{ left: "255px", duration: 700 }}
         duration={1000}
       >
         <ul>
@@ -137,7 +137,7 @@ export const CategoryDrawer = () => {
       <SubCategoryDrawer
         isOpen={subNestedDrawerOpen}
         onClose={closeAllDrawers}
-        style={{ left: "768px", duration: 700 }}
+        style={{ left: "510px", duration: 700 }}
         duration={1000}
       >
         <div>

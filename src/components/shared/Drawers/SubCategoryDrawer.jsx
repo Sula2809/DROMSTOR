@@ -39,7 +39,7 @@ export const SubCategoryDrawer = ({
         onClick={onClose}
       ></div>
       <div
-        className={`relative bg-white w-96 h-full px-4 pt-4 ${
+        className={`relative bg-white max-w-64 w-full h-full px-4 pt-4 ${
           isOpen ? "animate-expandWidth" : "animate-collapseWidth"
         }`}
         style={{ transitionDuration: `${duration}ms` }}

@@ -3,7 +3,6 @@ import { BreadCrumb } from "@/components/shared/BreadCrumb/BreadCrumb";
 import { OrderForm } from "@/components/shared/Cart/OrderForm";
 import { Button } from "@/components/ui/button";
 import favorites from "@/components/shared/Cart/favorites.json";
-import { ArrowLeft } from "lucide-react";
 import { BackToOrder } from "@/components/shared/BackToOrder/BackToOrder";
 
 const orderBreadCrumbs = [

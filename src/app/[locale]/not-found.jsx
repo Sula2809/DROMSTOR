@@ -1,3 +1,3 @@
-export default function NotFoundPage() {
-  return <p className="max-w-[460px]">NotFound</p>;
+export default function NotFound() {
+  return <div>Error!!! page is not found!</div>;
 }

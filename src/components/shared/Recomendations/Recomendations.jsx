@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl";
 import {
   Carousel,
   CarouselContent,
@@ -11,12 +10,11 @@ import { TextOnHover } from "@/components/shared/TextOnHover/TextOnHover";
 import Autoplay from "embla-carousel-autoplay";
 
 export const Recommendations = () => {
-  const t = useTranslations("Recommendations");
   return (
     <section className="p-2 lg:py-10">
       <div className="container">
         <h4 className="uppercase text-body3 text-button md:text-h4 font-normal md:font-bold w-full mb-3 md:mb-10">
-          {t("title")}
+          Рекомендации
         </h4>
         <Carousel
           className="mx-auto w-[100%]"

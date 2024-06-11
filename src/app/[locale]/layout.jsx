@@ -5,6 +5,7 @@ import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { locales } from "@/config";
 import { Footer } from "@/components/common/Footer";
 import { Header } from "@/components/common/Header";
+import "./globals.css";
 
 const mulish = Mulish({ subsets: ["latin"] });
 
@@ -14,7 +15,7 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({ children, params: { locale } }) {
   // Enable static rendering
-  unstable_setRequestLocale(locale);
+  //unstable_setRequestLocale(locale);
 
   // Providing all messages to the client
   // side is the easiest way to get started

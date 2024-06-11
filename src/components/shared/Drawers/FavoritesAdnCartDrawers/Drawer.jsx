@@ -19,7 +19,7 @@ export const Drawer = ({ isCart }) => {
       </SheetTrigger>
       <SheetContent
         side={"right"}
-        className={`bg-background_section w-[800px] p-12`}
+        className={`bg-background_section w-full lg:w-[800px] p-3 md:p-12`}
       >
         <DrawerContent isCart={isCart} />
       </SheetContent>
