@@ -17,6 +17,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 import { login } from "@/shared/services/auth/auth";
 import { ThreeDots } from "react-loader-spinner";
+import { useTranslations } from "next-intl";
 
 const FormSchema = z.object({
   email: z
@@ -32,6 +33,7 @@ const FormSchema = z.object({
 });
 
 export const Login = ({ showSignup, close, onAuthChange }) => {
+  const t = useTranslations("Auth");
   const [isLoading, setIsLoading] = useState(false);
   const form = useForm({
     resolver: zodResolver(FormSchema),
@@ -55,12 +57,12 @@ export const Login = ({ showSignup, close, onAuthChange }) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 z-10 size-full`}
+      className={`fixed top-0 left-0 size-full z-50`}
       onClick={() => close(false)}
     >
       <div className={`fixed inset-0 bg-black opacity-75`} />
       <div
-        className={`max-w-[596px] max-h-[600px] w-full h-full bg-white border border-gray_border absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20`}
+        className={`max-w-[596px] max-h-screen md:max-h-[600px] w-full h-full bg-white border border-gray_border absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className={`p-12 w-full`}>
@@ -68,7 +70,7 @@ export const Login = ({ showSignup, close, onAuthChange }) => {
             <div className="w-full flex justify-between">
               <div>
                 <img
-                  src="/icons/DROMtex-logo2.svg"
+                  src="/mainLogo.svg"
                   alt="logo2"
                   className="max-w-[140px]"
                 />
@@ -78,7 +80,7 @@ export const Login = ({ showSignup, close, onAuthChange }) => {
               </div>
             </div>
             <h3 className={`text-black text-h3 font-bold text-center`}>
-              Войти
+              {t("login")}
             </h3>
           </div>
           <Form {...form} className="w-full">
@@ -93,7 +95,7 @@ export const Login = ({ showSignup, close, onAuthChange }) => {
                   <FormItem className="w-full">
                     <FormControl>
                       <Input
-                        placeholder="Введите e-mail"
+                        placeholder={t("email")}
                         {...field}
                         className={`border border-light-border bg-inherit w-full`}
                       />
@@ -109,7 +111,7 @@ export const Login = ({ showSignup, close, onAuthChange }) => {
                   <FormItem className="w-full">
                     <FormControl>
                       <Input
-                        placeholder="Введите пароль"
+                        placeholder={t("password")}
                         {...field}
                         className={`border border-light-border bg-inherit`}
                       />
@@ -127,7 +129,7 @@ export const Login = ({ showSignup, close, onAuthChange }) => {
                   htmlFor="remember"
                   className="cursor-pointer text-button text-body3"
                 >
-                  Запомнить меня
+                  {t("rememberMe")}
                 </Label>
               </div>
               {isLoading ? (
@@ -139,14 +141,14 @@ export const Login = ({ showSignup, close, onAuthChange }) => {
                   type="submit"
                   className={`h-[60px] w-full text-body2 font-bold bg-button hover:bg-button-hover active:bg-button-hover text-white`}
                 >
-                  Войти
+                  {t("login")}
                 </Button>
               )}
               <Button
                 onClick={showSignup}
                 className={`h-[60px] border border-button w-full text-body2 font-bold bg-light-border hover:bg-button-hover active:bg-button-hover text-white`}
               >
-                Зарегистрироваться
+                {t("signin")}
               </Button>
             </form>
           </Form>

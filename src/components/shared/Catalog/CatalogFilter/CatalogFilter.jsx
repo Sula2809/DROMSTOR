@@ -6,18 +6,22 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useTranslations } from "next-intl";
+import { SubmitButtons } from "@/components/shared/Filter/MobileFilterSubmitButtons";
 
 export const CatalogFilter = () => {
+  const filter = useTranslations("Filters");
+
   return (
-    <div>
+    <div className={``}>
       <div className={`flex items-center justify-start w-full`}>
         <FilterIcon />
-        <h3 className={`text-h4 font-bold text-button`}>Фильтр</h3>
+        <h3 className={`text-h4 font-bold text-button`}>{filter("title")}</h3>
       </div>
       <div>
         <Accordion type="multiple" className="w-full">
           <AccordionItem value="filter-1">
-            <AccordionTrigger>Цвет</AccordionTrigger>
+            <AccordionTrigger>{filter("colors.title")}</AccordionTrigger>
             <AccordionContent className={`space-y-3`}>
               <div className="flex items-center space-x-2">
                 <Checkbox id="terms" />
@@ -25,7 +29,7 @@ export const CatalogFilter = () => {
                   htmlFor="terms"
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed cursor-pointer peer-disabled:opacity-70"
                 >
-                  Белый
+                  {filter("colors.white")}
                 </label>
               </div>
               <div className="flex items-center space-x-2">
@@ -34,7 +38,7 @@ export const CatalogFilter = () => {
                   htmlFor="terms2"
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed cursor-pointer peer-disabled:opacity-70"
                 >
-                  Черный
+                  {filter("colors.red")}
                 </label>
               </div>
               <div className="flex items-center space-x-2">
@@ -43,16 +47,33 @@ export const CatalogFilter = () => {
                   htmlFor="terms3"
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed cursor-pointer peer-disabled:opacity-70"
                 >
-                  Красный
+                  {filter("colors.black")}
+                </label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Checkbox id="terms3" />
+                <label
+                  htmlFor="terms3"
+                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed cursor-pointer peer-disabled:opacity-70"
+                >
+                  {filter("colors.grey")}
                 </label>
               </div>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="filter-2">
-            <AccordionTrigger>Цена</AccordionTrigger>
-            <AccordionContent>
-              Yes. It comes with default styles that matches the other
-              components&apos; aesthetic.
+            <AccordionTrigger>{filter("price.title")}</AccordionTrigger>
+            <AccordionContent className={`flex justify-between`}>
+              <input
+                type="text"
+                placeholder={`${filter("price.from")} 0 ${filter("price.currency")}`}
+                className={`border border-button rounded-full text-center py-1 px-2 max-w-[170px] text-button text-body3`}
+              />
+              <input
+                type="text"
+                placeholder={`${filter("price.to")} 35000 ${filter("price.currency")}`}
+                className={`border border-button rounded-full text-center py-1 px-2 max-w-[170px] text-button text-body3`}
+              />
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="filter-3">
@@ -84,6 +105,9 @@ export const CatalogFilter = () => {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
+      </div>
+      <div className={`mt-auto py-5`}>
+        <SubmitButtons />
       </div>
     </div>
   );

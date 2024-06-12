@@ -21,19 +21,19 @@ export const Counter = ({ defaultCount = 0, classname }) => {
   return (
     <div
       className={cn(
-        `flex mt-auto max-w-[112px] w-full justify-between items-center`,
+        `flex mt-auto max-w-[112px] w-full justify-start items-center`,
         classname,
       )}
     >
       <button
         onClick={decrement}
-        className={`border rounded-full p-0 w-5 h-5 flex items-center justify-center border-button`}
+        className={`text-body1 border border-button rounded-full size-6 flex justify-center items-end`}
       >
-        <MinusIcon className={`text-button`} />
+        -
       </button>
       <input
         type="text"
-        className={`text-button text-body3 font-normal bg-inherit max-w-[50px] text-center`}
+        className={`text-button text-body4 md:text-body3 font-normal bg-inherit max-w-[50px] text-center`}
         value={count}
         onChange={(e) => {
           setCount(Number(e.target.value));
@@ -41,9 +41,9 @@ export const Counter = ({ defaultCount = 0, classname }) => {
       />
       <button
         onClick={increment}
-        className={`border rounded-full p-0 w-5 h-5 flex items-center justify-center border-button`}
+        className={`text-body1 border border-button rounded-full size-6 flex justify-center items-end`}
       >
-        <PlusIcon className={`text-button`} />
+        +
       </button>
     </div>
   );

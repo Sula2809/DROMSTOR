@@ -4,14 +4,16 @@ import { BreadCrumb } from "@/components/shared/BreadCrumb/BreadCrumb";
 import { ProductImages } from "@/components/shared/Product/ProductImages/ProductImages";
 import { useEffect } from "react";
 import { ProductContent } from "@/components/shared/Product/ProductContent/ProductContent";
+import { useTranslations } from "next-intl";
 
 export default function ProductPage({ params }) {
+  const breadCrumbs = useTranslations("BreadCrumbs");
   const productName = decodeURL(params.product);
   const categoryName = decodeURL(params.name);
   const product = JSON.parse(localStorage.getItem("product"));
   const productBreadCrumbs = [
-    { name: "Главная", link: "/" },
-    { name: "Каталог", link: "/catalog" },
+    { name: breadCrumbs("home"), link: "/" },
+    { name: breadCrumbs("catalog"), link: "/catalog" },
     {
       name: categoryName,
       link: `/catalog/${categoryName}`,

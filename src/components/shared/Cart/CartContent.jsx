@@ -3,8 +3,10 @@ import { Counter } from "@/components/shared/Counter/Counter";
 import { Button } from "@/components/ui/button";
 import { DeliveryIcon } from "@/components/shared/Icons/DeliveryIcon";
 import favorites from "@/components/shared/Cart/favorites.json";
+import { useTranslations } from "next-intl";
 
 export const CartContent = ({ isOrder = false }) => {
+  const t = useTranslations("Cart.OrderPage");
   return (
     <div className={`px-3`}>
       <div className={`space-y-5 mt-5`}>
@@ -28,12 +30,14 @@ export const CartContent = ({ isOrder = false }) => {
                 <p
                   className={`text-body4 md:text-body3 font-normal text-button py-1 whitespace-nowrap overflow-hidden overflow-ellipsis w-full`}
                 >
-                  {item.price + " com"}
+                  {item.price + " " + t("currency")}
                 </p>
                 <div className={`mt-auto hidden lg:block`}>
                   {isOrder && (
-                    <p className={`text-blue-text`}>
-                      <DeliveryIcon /> Доставим в течении 10-20 дней
+                    <p
+                      className={`text-blue-text flex items-center gap-2 md:gap-4 mb-4`}
+                    >
+                      <DeliveryIcon /> {t("delivery")}
                     </p>
                   )}
                   <Counter defaultCount={item.count} />
@@ -43,7 +47,7 @@ export const CartContent = ({ isOrder = false }) => {
                 className={`underline text-c1 md:text-body3 p-0 h-5 text-button hover:bg-inherit hover:text-border_brown duration-300`}
                 variant={"ghost"}
               >
-                Удалить
+                {t("delete")}
               </Button>
             </div>
           </div>

@@ -7,13 +7,11 @@ export const CatalogMobile = ({ className, name }) => {
   return (
     <div className={cn("w-full p-0", className)}>
       {name && (
-        <div
-          className={`text-body3 font-bold text-button md:hidden my-3 ml-10`}
-        >
+        <div className={`text-body3 font-bold text-button md:hidden my-3 ml-5`}>
           {name}
         </div>
       )}
-      <div className="border border-t-button border-b-button flex p-0 w-full">
+      <div className="border border-t-button border-b-button flex justify-center p-0 w-full">
         <SortByMobile />
         <CatalogFilterMobile />
       </div>

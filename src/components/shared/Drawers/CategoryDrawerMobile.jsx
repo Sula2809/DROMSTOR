@@ -33,7 +33,6 @@ export const CategoryDrawerMobile = ({ className }) => {
       name: "Стеклянные панели",
       subcategories: ["дададада", "WPC Wall Panel", "Outdoor Wall Panel"],
     },
-    // Добавьте другие категории аналогично...
   ];
 
   return (

@@ -45,7 +45,7 @@ export default function LocaleSwitcherSelect() {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectItem value="ru">Russian</SelectItem>
+          <SelectItem value="ru">Русский</SelectItem>
           <SelectItem value="en">English</SelectItem>
         </SelectGroup>
       </SelectContent>

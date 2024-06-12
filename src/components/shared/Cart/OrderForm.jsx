@@ -13,6 +13,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const FormSchema = z.object({
   email: z
@@ -28,6 +29,7 @@ const FormSchema = z.object({
 });
 
 export const OrderForm = () => {
+  const t = useTranslations("Cart.OrderPage");
   const router = useRouter();
   const form = useForm({
     resolver: zodResolver(FormSchema),
@@ -58,7 +60,7 @@ export const OrderForm = () => {
                   <FormItem className="w-full">
                     <FormControl>
                       <Input
-                        placeholder="Имя"
+                        placeholder={t("name")}
                         {...field}
                         className={`border border-light-border bg-inherit w-full`}
                       />
@@ -74,7 +76,7 @@ export const OrderForm = () => {
                   <FormItem className="w-full">
                     <FormControl>
                       <Input
-                        placeholder="Фамилия"
+                        placeholder={t("surname")}
                         {...field}
                         className={`border border-light-border bg-inherit`}
                       />
@@ -90,7 +92,7 @@ export const OrderForm = () => {
                   <FormItem className="w-full">
                     <FormControl>
                       <Input
-                        placeholder="Номер телефона"
+                        placeholder={t("phone")}
                         {...field}
                         className={`border border-light-border bg-inherit`}
                       />
@@ -101,23 +103,26 @@ export const OrderForm = () => {
               />
               <div className={`h-[1px] w-full bg-button my-2`}></div>
               <div className={`flex justify-between p-3 w-full`}>
-                <p className={`text-body3 font-bold text-button`}>Итого</p>
                 <p className={`text-body3 font-bold text-button`}>
-                  {favorites.reduce((total, item) => total + item.price, 0)} сом
+                  {t("total")}
+                </p>
+                <p className={`text-body3 font-bold text-button`}>
+                  {favorites.reduce((total, item) => total + item.price, 0)}{" "}
+                  {t("currency")}
                 </p>
               </div>
               <Button
                 className={`bg-button hover:bg-button-hover duration-300 w-[97%] py-3 m-3`}
                 onClick={onSubmit}
               >
-                Оформить заказ
+                {t("makeOrder")}
               </Button>
             </form>
           </Form>
           <p
             className={`text-blue-text text-body4 sm:text-body3 md:text-body2 lg:text-body1 font-normal`}
           >
-            С вами свяжутся в течении 1-3 дней
+            {t("feedBack")}
           </p>
         </div>
       </div>

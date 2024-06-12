@@ -5,9 +5,11 @@ import useGetSubCategoriesStore from "@/shared/services/store/SubCategories.stor
 import useGetAllCategoriesStore from "@/shared/services/store/AllCategories.store";
 import { Oval } from "react-loader-spinner";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export const Footer = () => {
   const router = useRouter();
+  const t = useTranslations("Footer");
   const {
     fetchCategories,
     categoryData,
@@ -50,21 +52,21 @@ export const Footer = () => {
           <div className="flex gap-5 justify-between sm:flex-col">
             <div className="space-y-5">
               <h3 className="text-body3 md:text-body1 font-bold text-button">
-                Компания
+                {t("company.title")}
               </h3>
               <ul className="space-y-2.5">
-                <li className="text-body1 font-normal text-button hover:text-border_brown cursor-pointer">
-                  O нас
+                <li className="text-body3 md:text-body1 font-normal text-button hover:text-border_brown cursor-pointer">
+                  {t("company.aboutUs")}
                 </li>
-                <li className="text-body1 font-normal text-button hover:text-border_brown cursor-pointer">
-                  Контакты
+                <li className="text-body3 md:text-body1 font-normal text-button hover:text-border_brown cursor-pointer">
+                  {t("company.contacts")}
                 </li>
               </ul>
             </div>
 
             <div className="space-y-5 max-w-[264px] w-full">
               <h3 className="text-body3 md:text-body1 font-bold text-button">
-                Категории
+                {t("categories")}
               </h3>
               <ul className="space-y-2.5">
                 {isCategoryLoading ? (

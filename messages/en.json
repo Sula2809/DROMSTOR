@@ -1,11 +1,104 @@
 {
-  "Index": {
-    "title": "title"
+  "Search": "Search",
+  "Drawers": {
+    "favorites": "Favorites",
+    "cart": "Cart",
+    "currency": "Som"
   },
-  "LocaleSwitcher": {
-    "locale": "English"
+  "Buttons": {
+    "delete": "delete",
+    "deleteAll": "delete all",
+    "seeFavorites": "View favorites",
+    "seeCart": "View cart",
+    "makeOrder": "to order"
   },
-  "Recommendations": {
-    "title": "Recommendations"
+  "Currency": "som",
+  "Footer": {
+    "company": {
+      "title": "Company",
+      "aboutUs": "About us",
+      "contacts": "Contacts"
+    },
+    "categories": "Categories"
+  },
+  "Auth": {
+    "login": "Log In",
+    "signin": "Sign In",
+    "logout": "Log Out",
+    "email": "Enter your E-mail",
+    "password": "Enter your password",
+    "confirmPassword": "Repeat your password",
+    "rememberMe": "Remember me"
+  },
+  "BreadCrumbs": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "cart": "Cart",
+    "favorites": "Favorites",
+    "makeOrder": "Make an order",
+    "allCategories": "All categories"
+  },
+  "Filters": {
+    "title": "Filters",
+    "categories": "Categories",
+    "subcategories": "Subcategories",
+    "subsubcategories": "Subsubcategories",
+    "colors": {
+      "title": "Colors",
+      "white": "White",
+      "red": "Red",
+      "black": "Black",
+      "grey": "Grey"
+    },
+    "price": {
+      "title": "Price",
+      "from": "from",
+      "to": "to",
+      "currency": "Som"
+    }
+  },
+  "Cart": {
+    "Cart": {
+      "title": "Cart"
+    },
+    "OrderPage": {
+      "title": "Your products",
+      "cart": "Cart",
+      "deleteAll": "Delete all",
+      "delete": "delete",
+      "currency": "Som",
+      "delivery": "Delivery within 10-20 days",
+      "product": "Products",
+      "name": "Name",
+      "surname": "Surname",
+      "phone": "Your phone number",
+      "total": "Total",
+      "makeOrder": "Make an order",
+      "feedBack": "You will be contacted within 1-3 days",
+      "goOrder": "Go to make an order"
+    },
+    "OrderSuccess": {
+      "title": "Your order is accepted!",
+      "feedBack": "You will be contacted within 1-3 days",
+      "toCatalog": "Go to catalog"
+    }
+  },
+  "Product": {
+    "reset": "Reset",
+    "submit": "Submit",
+    "new": "New",
+    "recommended": "Recommended",
+    "currency": "Som",
+    "material": "Material",
+    "color": "Color",
+    "addCart": "Add to cart",
+    "description": "Description"
+  },
+  "Sort": {
+    "title": "Sort by",
+    "new": "New",
+    "popular": "Popular",
+    "priceUp": "price: From high",
+    "priceDown": "price: From low"
   }
 }

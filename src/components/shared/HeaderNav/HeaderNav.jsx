@@ -16,7 +16,7 @@ export const HeaderNav = () => {
   return (
     <div className={`w-full bg-foreground flex justify-center`}>
       {isCategoryLoading ? (
-        <div className="flex justify-center items-center bg-button-hover h-16 w-full"></div>
+        <div className="flex justify-center items-center bg-button-hover h-6 w-full"></div>
       ) : (
         <ul className={`flex container justify-between`}>
           {/*{categoryData?.results?.slice(0, 6).map((category, index) => (*/}

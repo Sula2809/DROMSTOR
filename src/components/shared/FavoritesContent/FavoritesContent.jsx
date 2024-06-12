@@ -1,8 +1,9 @@
-import Image from "next/image";
 import { FavoriteIcon } from "@/components/shared/Icons/FavoriteIcon";
-import { BugIcon } from "@/components/shared/Icons/BugIcon";
+import { CartButton } from "@/components/shared/Buttons/CartButton/CartButton";
+import { useTranslations } from "next-intl";
 
 export const FavoritesContent = () => {
+  const t = useTranslations("Drawers");
   const favorites = [
     {
       img: "/cart/cart1.png",
@@ -78,21 +79,22 @@ export const FavoritesContent = () => {
     },
   ];
   return (
-    <div className={`py-10`}>
-      <h1 className={`text-h4 font-bold text-button mb-8`}>Избранные</h1>
-      <div className="flex flex-wrap justify-start gap-8 items-center">
+    <div className={`py-2 md:py-10`}>
+      <h1
+        className={`text-body3 sm:text-body2 md:text-body1 lg:text-h4 font-bold text-button mb-8`}
+      >
+        {t("favorites")}
+      </h1>
+      <div className="flex flex-wrap justify-start gap-2 md:gap-8 items-center">
         {favorites.map((item, index) => (
           <div key={index} className={`shadow space-y-3 pb-3 cursor-pointer`}>
             <div
-              className={`relative size-full max-w-[318px]`}
-              style={{ width: "318px", height: "388px" }}
+              className={`relative h-[200px] w-[195px] md:w-[316px] md:h-[388px]`}
             >
-              <Image
+              <img
                 src={item.img}
                 alt="logo"
-                className={`size-full object-cover`}
-                width={316}
-                height={388}
+                className={`w-full h-full object-cover`}
               />
               <span
                 className={`absolute top-2 right-2 max-w-[60px] max-h-[34px] bg-background rounded-2xl flex justify-center size-full cursor-pointer`}
@@ -104,21 +106,15 @@ export const FavoritesContent = () => {
                   isFill={true}
                 />
               </span>
-              <span
-                className={`absolute top-12 right-2 max-w-[60px] max-h-[34px] bg-background rounded-2xl flex justify-center size-full cursor-pointer`}
-              >
-                {item.isInCart ? (
-                  <BugIcon isFill={true} isStroke={false} />
-                ) : (
-                  <BugIcon />
-                )}
-              </span>
+              <CartButton item={item.isInCart} />
             </div>
             <h1
-              className={`px-3 text-body2 font-normal text-button`}
+              className={`px-3 text-body-4 m-0 md:text-body2 font-normal text-button`}
             >{`${item.title}${index}`}</h1>
-            <p className={`px-3 text-body3 font-normal text-button`}>
-              {item.price + " com"}
+            <p
+              className={`px-3 text-body-c1 md:text-body3 font-normal text-button m-0`}
+            >
+              {item.price + " " + t("currency")}
             </p>
           </div>
         ))}

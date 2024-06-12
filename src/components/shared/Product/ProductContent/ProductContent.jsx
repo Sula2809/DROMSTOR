@@ -4,8 +4,10 @@ import Image from "next/image";
 import { Counter } from "@/components/shared/Counter/Counter";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export const ProductContent = ({ product }) => {
+  const productT = useTranslations("Product");
   const [selectedMaterial, setSelectedMaterial] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
 
@@ -28,11 +30,13 @@ export const ProductContent = ({ product }) => {
             />
           </div>
           <p className="text-body1 font-normal text-button">
-            {product.price} com
+            {product.price} {productT("currency")}
           </p>
         </div>
         <div className="space-y-3">
-          <h3 className="text-body2 font-bold text-button">Материал</h3>
+          <h3 className="text-body2 font-bold text-button">
+            {productT("material")}
+          </h3>
           <div className="w-full justify-start items-center flex gap-3 relative">
             {product.materials.map((item, index) => (
               <div
@@ -54,7 +58,9 @@ export const ProductContent = ({ product }) => {
           </div>
         </div>
         <div className="space-y-3">
-          <h3 className="text-body2 font-bold text-button">Цвет</h3>
+          <h3 className="text-body2 font-bold text-button">
+            {productT("color")}
+          </h3>
           <div className="flex items-center justify-start gap-3 w-full">
             {product.colors.map((item, index) => (
               <div
@@ -78,17 +84,19 @@ export const ProductContent = ({ product }) => {
         <div className="flex items-center gap-5">
           <Counter classname="mt-0" />
           <Button className="bg-button rounded-sm hover:bg-border_brown active:scale-[0.95]">
-            Добавить в корзину
+            {productT("addCart")}
           </Button>
         </div>
       </div>
-      <div className={`w-full`}>
-        <div className="space-y-5 ma:space-y-12 mt-10 md:mt-24 bg-background_section md:bg-inherit py-3 px-1">
+      <div
+        className={`w-full mt-10 md:mt-24 bg-background_section md:bg-inherit py-3 px-1`}
+      >
+        <h2 className="text-body3 md:text-body1 font-bold text-button mb-5">
+          {productT("description")}
+        </h2>
+        <div className="space-y-5 md:space-y-12 ">
           {product.descriptions.map((item, index) => (
             <div key={index} className="space-y-1 md:space-y-5">
-              <h3 className="text-body3 md:text-body1 font-bold text-button">
-                {item.title}
-              </h3>
               <p className="text-body4 md:text-body1 font-normal text-button">
                 {item.text}
               </p>

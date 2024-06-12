@@ -12,7 +12,7 @@ export const HeaderMain = () => {
       <div className="flex justify-between w-full items-center">
         <div className={`flex items-center justify-between gap-4 h-full`}>
           <CategoryDrawer className={`hidden md:block`} />
-          <CategoryDrawerMobile />
+          <CategoryDrawerMobile className={`md:hidden`} />
           <div className={`h-full`}>
             <Link href={"/"} className={`max-w-[166px] max-h-[48px]`}>
               <img

@@ -2,50 +2,59 @@
 import { Button } from "@/components/ui/button";
 import { Counter } from "@/components/shared/Counter/Counter";
 import { Empty } from "@/components/shared/Drawers/Empty/Empty";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { SheetClose } from "@/components/ui/sheet";
 import favorites from "@/components/shared/Cart/favorites.json";
+import { useTranslations } from "next-intl";
 
 export const DrawerContent = ({ isCart = false }) => {
   const isEmpty = false;
   const router = useRouter();
+  const t = useTranslations();
 
   return (
     <div className={`w-full h-full space-y-5`}>
-      <h2 className={`text-h4 font-normal text-button`}>
-        {isCart ? "Корзина" : "Избранные"}
+      <h2
+        className={`text-body2 md:text-body1 lg:text-h4 font-normal text-button`}
+      >
+        {isCart ? t("Drawers.cart") : t("Drawers.favorites")}
       </h2>
       {isEmpty ? (
         <Empty isCart={false} />
       ) : (
         <div className={`h-full`}>
-          <div className={`h-[720px] overflow-y-scroll pr-10`}>
+          <div
+            className={`h-[580px] md:h-[690px] lg:h-[720px] overflow-y-scroll pr-10`}
+          >
             <div className={`space-y-5`}>
               {favorites.map((item, index) => (
                 <div key={index} className={`flex justify-between`}>
-                  <div className={`w-[30%]`}>
-                    <Image
-                      src={item.img}
-                      alt={`image${index}`}
-                      width={188}
-                      height={188}
-                    />
+                  <div className={`w-1/5 md:w-[30%]`}>
+                    <img src={item.img} alt={`image${index}`} />
                   </div>
                   <div className={`flex flex-col w-1/2`}>
-                    <h2 className={`text-body2 font-normal text-button pb-2`}>
+                    <h2
+                      className={`text-body3 md:text-body2 font-normal text-button pb-2`}
+                    >
                       {item.title + index}
                     </h2>
-                    <p className={`text-body3 font-normal text-button py-1`}>
-                      {item.price + " com"}
-                    </p>
-                    <Counter defaultCount={item.count} classname={`mt-auto`} />
+                    <div className={`flex md:flex-col justify-between gap-4`}>
+                      <p
+                        className={`text-body4 md:text-body3 font-normal text-button py-1`}
+                      >
+                        {item.price + " " + t("Currency")}
+                      </p>
+                      <Counter
+                        defaultCount={item.count}
+                        classname={`mt-auto`}
+                      />
+                    </div>
                   </div>
                   <Button
                     className={`underline p-0 h-5 text-button hover:bg-inherit hover:text-border_brown duration-300`}
                     variant={"ghost"}
                   >
-                    Удалить
+                    {t("Buttons.delete")}
                   </Button>
                 </div>
               ))}
@@ -56,9 +65,9 @@ export const DrawerContent = ({ isCart = false }) => {
           >
             <Button
               variant={"ghost"}
-              className={`underline text-button hover:bg-inherit hover:text-border_brown duration-300`}
+              className={`underline px-2 md:p-4 text-button hover:bg-inherit hover:text-border_brown duration-300`}
             >
-              Удалить все
+              {t("Buttons.deleteAll")}
             </Button>
             <SheetClose asChild>
               <Button
@@ -68,9 +77,9 @@ export const DrawerContent = ({ isCart = false }) => {
                     ? router.replace(`/cart`)
                     : router.replace(`/favorites`);
                 }}
-                className={`underline text-button hover:bg-inherit hover:text-border_brown duration-300`}
+                className={`underline px-2 md:p-4 text-button hover:bg-inherit hover:text-border_brown duration-300`}
               >
-                {isCart ? "Посмотреть корзину" : "Посмотреть избранные"}
+                {isCart ? t("Buttons.seeCart") : t("Buttons.seeFavorites")}
               </Button>
             </SheetClose>
             {isCart ? (
@@ -79,7 +88,7 @@ export const DrawerContent = ({ isCart = false }) => {
                   className={`bg-button hover:bg-border_brown active:bg-border_brown text-white`}
                   onClick={() => router.replace(`/cart/order`)}
                 >
-                  Оформить заказ
+                  {t("Buttons.makeOrder")}
                 </Button>
               </SheetClose>
             ) : null}

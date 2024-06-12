@@ -7,7 +7,6 @@ import {
 import { Button } from "@/components/ui/button";
 import {
   Command,
-  CommandEmpty,
   CommandGroup,
   CommandItem,
   CommandList,
@@ -15,29 +14,31 @@ import {
 import { ChevronDown, Check } from "lucide-react";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-
-const sortItem = [
-  {
-    value: "new",
-    label: "По новизне",
-  },
-  {
-    value: "popular",
-    label: "По популярности",
-  },
-  {
-    value: "low",
-    label: "Цена: от низкий",
-  },
-  {
-    value: "high",
-    label: "Цена: от высокой",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export const SortByMobile = () => {
+  const sort = useTranslations("Sort");
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
+
+  const sortItem = [
+    {
+      value: "new",
+      label: sort("new"),
+    },
+    {
+      value: "popular",
+      label: sort("popular"),
+    },
+    {
+      value: "low",
+      label: sort("priceDown"),
+    },
+    {
+      value: "high",
+      label: sort("priceUp"),
+    },
+  ];
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -50,14 +51,13 @@ export const SortByMobile = () => {
         >
           {value
             ? sortItem.find((framework) => framework.value === value)?.label
-            : "Отсортировать"}
+            : sort("title")}
           <ChevronDown className="ml-2 h-6 w-6 shrink-0 text-button" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="max-w-[240px] max-h-[44px] p-0">
+      <PopoverContent className="w-52 p-1">
         <Command>
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
             <CommandGroup>
               {sortItem.map((framework) => (
                 <CommandItem

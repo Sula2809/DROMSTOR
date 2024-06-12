@@ -1,11 +1,100 @@
 {
-  "Index": {
-    "title": "тайтл"
+  "Search": "Поиск",
+  "Drawers": {
+    "favorites": "Избранные",
+    "cart": "Корзина",
+    "currency": "Сом"
   },
-  "LocaleSwitcher": {
-    "locale": "Русский"
+  "Buttons": {
+    "delete": "удалить",
+    "deleteAll": "удалить все",
+    "seeFavorites": "Посмотреть избранные",
+    "seeCart": "Посмотреть корзину",
+    "makeOrder": "Оформить заказ"
   },
-  "Recommendations": {
-    "title": "Рекомендации"
+  "Currency": "сом",
+  "Footer": {
+    "company": {
+      "title": "Компания",
+      "aboutUs": "О нас",
+      "contacts": "Контакты"
+    },
+    "categories": "Категории"
+  },
+  "Auth": {
+    "login": "Войти",
+    "signin": "Зарегистрироваться",
+    "logout": "Выйти",
+    "email": "Введите ваш E-mail",
+    "password": "Введите ваш пароль",
+    "confirmPassword": "Повторите ваш пароль",
+    "rememberMe": "Запомнить меня"
+  },
+  "BreadCrumbs": {
+    "home": "Главная",
+    "catalog": "Каталог",
+    "cart": "Корзина",
+    "favorites": "Избранные",
+    "makeOrder": "Оформление заказа"
+  },
+  "Filters": {
+    "title": "Фильтры",
+    "categories": "Категории",
+    "subcategories": "Субкатегории",
+    "subsubcategories": "Подсубкатегории",
+    "colors": {
+      "title": "Цвета",
+      "white": "Белый",
+      "red": "Красный",
+      "black": "Черный",
+      "grey": "Серый"
+    },
+    "price": {
+      "title": "Цена",
+      "from": "от",
+      "to": "до",
+      "currency": "Сом"
+    }
+  },
+  "Cart": {
+    "OrderPage": {
+      "title": "Ваши продукты",
+      "cart": "Корзина",
+      "deleteAll": "Удалить все",
+      "delete": "удалить",
+      "currency": "Сом",
+      "delivery": "Доставим в течении 10-20 дней",
+      "product": "Товары",
+      "name": "Имя",
+      "surname": "Фамилия",
+      "phone": "Ваш номер телефона",
+      "total": "Итоги",
+      "makeOrder": "Оформить заказ",
+      "feedBack": "С вами свяжутся в течении 1-3 дней",
+      "goOrder": "Перейти к оформлению заказа"
+    },
+    "OrderSuccess": {
+      "title": "Ваш заказ принят!",
+      "feedBack": "С вами свяжутся в течении 1-3 дней",
+      "toCatalog": "Перейти в каталог"
+    }
+  },
+  "Product": {
+    "reset": "Сбросить",
+    "submit": "Применить",
+    "new": "Новый",
+    "recommended": "Рекомендуем",
+    "currency": "Сом",
+    "material": "Material",
+    "color": "Color",
+    "addCart": "Add to cart",
+    "description": "Description"
+  },
+  "Sort": {
+    "title": "Отсортировать",
+    "new": "Новые",
+    "popular": "Популярные",
+    "priceUp": "цена: От высокой",
+    "priceDown": "цена: От низкой"
   }
 }

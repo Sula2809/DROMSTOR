@@ -1,8 +1,10 @@
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export const Search = ({ classname }) => {
+  const t = useTranslations();
   return (
     <div
       className={cn(
@@ -13,7 +15,7 @@ export const Search = ({ classname }) => {
       <Input
         type="search"
         className={`border border-border_brown rounded-full focus:outline-red-700 focus:border-none`}
-        placeholder={"поиск"}
+        placeholder={t("Search")}
       />
       <Image
         width={32}
