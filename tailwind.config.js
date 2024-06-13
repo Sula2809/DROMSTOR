@@ -56,6 +56,18 @@ module.exports = {
         "reg-button": "var(--register)",
         "light-border": "var(--border-custom)",
         "blue-text": "var(--blue-text)",
+
+        // Admin styles
+        "admin-blue": "var(--admin-blue)",
+        "admin-blue-hover": "var(--admin-blue-hover)",
+        "admin-red": "var(--admin-red)",
+        "admin-red-hover": "var(--admin-red-hover)",
+        "admin-grey": "var(--admin-grey)",
+        "admin-grey-hover": "var(--admin-grey-hover)",
+        "admin-cancel": "var(--admin-cancel)",
+        "custom-grey": "var(--admin-custom-grey)",
+        "admin-green": "var(--admin-green)",
+        breadCrumbs: "var(--admin-breadCrumbs)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

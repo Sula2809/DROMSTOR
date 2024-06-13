@@ -35,7 +35,7 @@ export const ProductContent = ({ product }) => {
         </div>
         <div className="space-y-3">
           <h3 className="text-body2 font-bold text-button">
-            {productT("material")}
+            {productT("materials")}
           </h3>
           <div className="w-full justify-start items-center flex gap-3 relative">
             {product.materials.map((item, index) => (
