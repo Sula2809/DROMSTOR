@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { SearchIcon } from "@/components/admin/icons/SearchIcon";
 import { TrashIconWhite } from "@/components/admin/icons/TrashIconWhite";
-import { AddButton } from "@/components/admin/AddButton/AddButton";
+import { AddButton } from "@/components/admin/Buttons/AddButton";
 import { OkIcon } from "@/components/admin/icons/OkIcon";
-import { EditButton } from "@/components/admin/EditButton/EditButton";
+import { EditButtonOutline } from "@/components/admin/Buttons/EditButtonOutline";
 
 function generateRandomId() {
   return Math.random().toString(36).substr(2, 9);
@@ -33,7 +33,7 @@ export default function CategoryPage() {
       </div>
       <div className="flex justify-between items-center my-5">
         <h2 className={`text-body1`}>Выберите категорию для изменения</h2>
-        <AddButton link={"/category/add"}>Добавить категорию</AddButton>
+        <AddButton link={"category"}>Добавить категорию</AddButton>
       </div>
       <div className="flex items-center justify-start gap-4 my-5">
         <p className={`text-body2`}>Поиск: </p>
@@ -53,7 +53,7 @@ export default function CategoryPage() {
               <input type="checkbox" />
             </th>
             <th className="px-2">ID</th>
-            <th className="px-2">Название</th>
+            <th className="px-2">Категория</th>
             <th className="px-2 flex justify-end">
               <Button className="bg-inherit hover:bg-inherit hover:border-b rounded-none p-0 px-1 duration-700 flex items-center gap-2">
                 <TrashIconWhite /> Удалить
@@ -73,7 +73,9 @@ export default function CategoryPage() {
               <td className="px-2 w-[15%]">{item.id}</td>
               <td className="px-2 w-[70%]">{item.name}</td>
               <td className="px-2 flex gap-2 w-[12%]">
-                <EditButton value={item.name} link={"/category/edit"} />
+                <EditButtonOutline name={item.name} link={"category"}>
+                  Изменить
+                </EditButtonOutline>
                 <Button className="bg-inherit hover:bg-inherit hover:border-b rounded-none p-0 px-1 duration-700 flex items-center gap-2">
                   <TrashIconWhite /> Удалить
                 </Button>

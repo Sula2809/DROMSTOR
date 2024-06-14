@@ -2,11 +2,13 @@
 import { BreadCrumb } from "@/components/shared/BreadCrumb/BreadCrumb";
 import { Products } from "@/components/admin/Home/Products";
 import { Users } from "@/components/admin/Home/Users";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "@/navigation";
 
 export default function AdminHomeLayout({ children, params: { locale } }) {
   const pathname = usePathname();
+  const [currentAction, setCurrentAction] = useState("");
+
   const adminBreadCrumbs = [
     { name: "Главная", link: "/" },
     { name: "Панель администратора", link: "/admin" },
@@ -36,7 +38,7 @@ export default function AdminHomeLayout({ children, params: { locale } }) {
                 ? "Материалы"
                 : pathname.split("/").slice(0, 4).join("/") ===
                     "/admin/home/products"
-                  ? "Товары"
+                  ? "Продукты"
                   : pathname.split("/").slice(0, 4).join("/") ===
                       "/admin/home/subcategory"
                     ? "Подкатегории"
@@ -57,72 +59,40 @@ export default function AdminHomeLayout({ children, params: { locale } }) {
                               ? "Избранные пользователей"
                               : "не определено",
       link:
-        pathname.split("/").slice(4, 5).join("/") === "edit"
+        pathname.split("/").slice(4, 5).join("/") === "add&edit"
           ? pathname.split("/").slice(0, 4).join("/")
-          : pathname.split("/").slice(4, 5).join("/") === "add"
+          : pathname.split("/").slice(3, 4).join("/") === "category" ||
+              pathname.split("/").slice(3, 4).join("/") === "subcategory" ||
+              pathname.split("/").slice(3, 4).join("/") === "subsubcategory" ||
+              pathname.split("/").slice(3, 4).join("/") === "products" ||
+              pathname.split("/").slice(3, 4).join("/") === "colors" ||
+              pathname.split("/").slice(3, 4).join("/") === "images" ||
+              pathname.split("/").slice(3, 4).join("/") === "materials" ||
+              pathname.split("/").slice(3, 4).join("/") === "userBasket" ||
+              pathname.split("/").slice(3, 4).join("/") === "userFavorites" ||
+              pathname.split("/").slice(3, 4).join("/") === "userOrders" ||
+              pathname.split("/").slice(3, 4).join("/") === "users"
             ? pathname.split("/").slice(0, 4).join("/")
-            : pathname,
+            : "",
     },
     {
-      name:
-        pathname === "/admin/home/category/add"
-          ? "Добавить"
-          : pathname === "/admin/home/colors/add"
-            ? "Добавить"
-            : pathname === "/admin/home/images/add"
-              ? "Добавить"
-              : pathname === "/admin/home/materials/add"
-                ? "Добавить"
-                : pathname === "/admin/home/products/add"
-                  ? "Добавить"
-                  : pathname === "/admin/home/subcategory/add"
-                    ? "Добавить"
-                    : pathname === "/admin/home/subsubcategory/add"
-                      ? "Добавить"
-                      : pathname === "/admin/home/userBasket/add"
-                        ? "Добавить"
-                        : pathname === "/admin/home/userOrders/add"
-                          ? "Добавить"
-                          : pathname === "/admin/home/users/add"
-                            ? "Добавить"
-                            : pathname === "/admin/home/userFavorites/add"
-                              ? "Добавить"
-                              : pathname === "/admin/home/category/edit"
-                                ? "Изменить"
-                                : pathname === "/admin/home/colors/edit"
-                                  ? "Изменить"
-                                  : pathname === "/admin/home/images/edit"
-                                    ? "Изменить"
-                                    : pathname === "/admin/home/materials/edit"
-                                      ? "Изменить"
-                                      : pathname === "/admin/home/products/edit"
-                                        ? "Изменить"
-                                        : pathname ===
-                                            "/admin/home/subcategory/edit"
-                                          ? "Изменить"
-                                          : pathname ===
-                                              "/admin/home/subsubcategory/edit"
-                                            ? "Изменить"
-                                            : pathname ===
-                                                "/admin/home/userBasket/edit"
-                                              ? "Изменить"
-                                              : pathname ===
-                                                  "/admin/home/userOrders/edit"
-                                                ? "Изменить"
-                                                : pathname ===
-                                                    "/admin/home/users/edit"
-                                                  ? "Изменить"
-                                                  : pathname ===
-                                                      "/admin/home/userFavorites/edit"
-                                                    ? "Изменить"
-                                                    : null,
+      name: currentAction,
       link: pathname,
     },
   ];
 
   useEffect(() => {
-    console.log("Current path:", pathname.split("/").slice(4, 5).join("/"));
-    console.log("Current path2:", pathname.split("/").slice(0, 4).join("/"));
+    if (pathname.split("/").slice(4, 5).join("/") === "add&edit") {
+      const action = localStorage.getItem("buttonAction");
+      if (action === "edit") {
+        setCurrentAction("Изменить");
+      }
+      if (action === "add") {
+        setCurrentAction("Добавить");
+      }
+    } else {
+      setCurrentAction("");
+    }
   }, [pathname]);
 
   return (

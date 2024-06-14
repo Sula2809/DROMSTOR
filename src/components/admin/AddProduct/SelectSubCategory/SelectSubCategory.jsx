@@ -6,7 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { AddOutline } from "@/components/admin/AddButton/AddOutline";
+import { AddOutline } from "@/components/admin/Buttons/AddOutline";
 
 export const SelectSubCategory = ({ label }) => {
   return (
@@ -30,7 +30,7 @@ export const SelectSubCategory = ({ label }) => {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <AddOutline link={"/subcategory/add"} />
+        <AddOutline link={"/subcategory/add&edit&edit"} />
       </div>
     </div>
   );

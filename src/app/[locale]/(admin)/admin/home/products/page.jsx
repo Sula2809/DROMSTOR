@@ -1,9 +1,9 @@
 import { OkIcon } from "@/components/admin/icons/OkIcon";
-import { AddButton } from "@/components/admin/AddButton/AddButton";
 import { SearchIcon } from "@/components/admin/icons/SearchIcon";
 import { Button } from "@/components/ui/button";
 import { TrashIconWhite } from "@/components/admin/icons/TrashIconWhite";
-import { EditButton } from "@/components/admin/EditButton/EditButton";
+import { AddButton } from "@/components/admin/Buttons/AddButton";
+import { EditButtonOutline } from "@/components/admin/Buttons/EditButtonOutline";
 
 function generateRandomId() {
   return Math.random().toString(36).substr(2, 9);
@@ -25,7 +25,7 @@ export default function ProductPage() {
       </div>
       <div className="flex justify-between items-center my-5">
         <h2 className={`text-body1`}>Выберите продукт для изменения</h2>
-        <AddButton link={"/products/add"}>Добавить продукт</AddButton>
+        <AddButton link={"products"}>Добавить продукт</AddButton>
       </div>
       <div className="flex items-center justify-start gap-4 my-5">
         <p className={`text-body2`}>Поиск: </p>
@@ -67,7 +67,9 @@ export default function ProductPage() {
               <td className="px-2 w-[50%]">{item.name}</td>
               <td className="px-2 w-[20%]">{item.category}</td>
               <td className="px-2 flex gap-2 w-[12%]">
-                <EditButton value={item.name} link={"/products/edit"} />
+                <EditButtonOutline link={"products"} name={item.name}>
+                  Изменить
+                </EditButtonOutline>
                 <Button className="bg-inherit hover:bg-inherit hover:border-b rounded-none p-0 px-1 duration-700 flex items-center gap-2">
                   <TrashIconWhite /> Удалить
                 </Button>

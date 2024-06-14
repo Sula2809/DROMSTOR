@@ -1,4 +1,4 @@
-import { AddOutline } from "@/components/admin/AddButton/AddOutline";
+import { AddOutline } from "@/components/admin/Buttons/AddOutline";
 import {
   Select,
   SelectContent,
@@ -30,7 +30,7 @@ export const SelectColor = ({ label }) => {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <AddOutline link={"/colors/add"} />
+        <AddOutline link={"/colors/add&edit&edit"} />
       </div>
     </div>
   );
