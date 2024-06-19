@@ -1,3 +1,5 @@
+import { FetchUsers } from "@/components/admin/FetchUsers/FetchUsers";
+
 export default function UserFavoritesPage() {
-  return <div>UserFavoritesPage</div>;
+  return <FetchUsers type={"favorites"} />;
 }

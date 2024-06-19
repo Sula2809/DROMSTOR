@@ -10,16 +10,21 @@ import {
 import { Signup } from "@/components/shared/auth/Signup/Signup";
 import { Login } from "@/components/shared/auth/Login/Login";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 export const UserProfile = () => {
   const t = useTranslations("Auth");
+  const router = useRouter();
+
   const [isAuth, setIsAuth] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
+  const [role, setRole] = useState("");
 
   useEffect(() => {
     setIsAuth(!!Cookies.get("access_token"));
-  }, []);
+    setRole(Cookies.get("role"));
+  }, [showLogin]);
 
   const handleLoginClick = () => {
     setShowSignup(false);
@@ -33,7 +38,13 @@ export const UserProfile = () => {
 
   const handleLogout = () => {
     Cookies.remove("access_token");
+    Cookies.remove("refresh_token");
+    Cookies.remove("role");
     setIsAuth(false);
+  };
+
+  const handleAdminDashboard = () => {
+    router.push("/admin");
   };
 
   return (
@@ -53,6 +64,14 @@ export const UserProfile = () => {
             >
               {t("logout")}
             </DropdownMenuCheckboxItem>
+            {role && (
+              <DropdownMenuCheckboxItem
+                className="cursor-pointer"
+                onClick={handleAdminDashboard}
+              >
+                {role === "admin" ? "Админ панель" : null}
+              </DropdownMenuCheckboxItem>
+            )}
           </DropdownMenuContent>
         ) : (
           <DropdownMenuContent className="max-w-[200px]">

@@ -24,9 +24,10 @@ export default function AddEditCategory() {
             : "Ошибка"}
       </h2>
       <div className={`flex gap-20 items-center`}>
-        <p className={`text-body2 font-bold`}>Имя:</p>{" "}
+        <p className={`text-body2 font-bold w-1/4`}>Название:</p>{" "}
         <input
-          className={`bg-inherit rounded-sm border border-white`}
+          className={`bg-inherit rounded-sm border border-white w-96 px-3 py-1`}
+          placeholder={`Введите название категории...`}
           type="text"
         />
       </div>

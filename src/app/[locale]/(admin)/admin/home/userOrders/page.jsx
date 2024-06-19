@@ -1,3 +1,5 @@
+import { FetchUsers } from "@/components/admin/FetchUsers/FetchUsers";
+
 export default function UserOrdersPage() {
-  return <div>UserOrdersPage</div>;
+  return <FetchUsers type={"orders"} />;
 }

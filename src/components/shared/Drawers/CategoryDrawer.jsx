@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { SubCategoryDrawer } from "./SubCategoryDrawer";
 import { cn } from "@/lib/utils";
+import useGetAllCategoriesStore from "@/shared/services/store/AllCategories.store";
+import useGetSubCategoriesStore from "@/shared/services/store/SubCategories.store";
 
 const categories = [
   { id: 1, name: "Категория 1" },
@@ -40,6 +42,11 @@ const subCategories = {
 };
 
 export const CategoryDrawer = ({ className }) => {
+  const { categoryData, isLoading: categoryLoading } =
+    useGetAllCategoriesStore();
+  const { subCategoryData, isLoading: subcategoryLoading } =
+    useGetSubCategoriesStore();
+
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
   const [nestedDrawerOpen, setNestedDrawerOpen] = useState(false);
@@ -103,7 +110,7 @@ export const CategoryDrawer = ({ className }) => {
         style={{ duration: 700 }}
       >
         <ul>
-          {categories.map((item, index) => (
+          {categoryData?.results?.map((item, index) => (
             <li
               key={index}
               onMouseEnter={() => openNestedDrawer(item)}

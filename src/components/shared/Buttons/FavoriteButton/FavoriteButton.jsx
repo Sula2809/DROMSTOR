@@ -9,7 +9,7 @@ const FavoriteButton = ({ item, classname }) => {
   return (
     <span
       className={cn(
-        `absolute top-2 right-2 max-w-[60px] max-h-[34px] bg-white rounded-2xl flex justify-center size-full cursor-pointer hover:bg-button duration-300 active:scale-[0.9]`,
+        `absolute border border-black top-4 right-2 max-w-[60px] max-h-[34px] bg-white rounded-2xl flex justify-center items-center size-full cursor-pointer hover:bg-button duration-300 active:scale-[0.9]`,
         classname,
       )}
       onMouseEnter={() => setIsHovered(true)}

@@ -100,12 +100,12 @@ export default function AdminHomeLayout({ children, params: { locale } }) {
       <div className="w-full p-3 bg-breadCrumbs container">
         <BreadCrumb items={adminBreadCrumbs} />
       </div>
-      <div className="flex gap-10 py-5 container">
-        <div className="space-y-5 w-1/4">
+      <div className="flex flex-col md:flex-row gap-2 lg:gap-10 py-5 container">
+        <div className="space-y-5 w-full md:w-1/4">
           <Products isRoute={false} />
           <Users isRoute={false} />
         </div>
-        <div className="w-3/4">{children}</div>
+        <div className="w-full md:w-3/4">{children}</div>
       </div>
     </div>
   );

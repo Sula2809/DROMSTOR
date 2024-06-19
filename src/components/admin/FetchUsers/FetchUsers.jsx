@@ -1,33 +1,37 @@
-import { OkIcon } from "@/components/admin/icons/OkIcon";
-import { AddButton } from "@/components/admin/Buttons/AddButton";
 import { SearchIcon } from "@/components/admin/icons/SearchIcon";
 import { Button } from "@/components/ui/button";
 import { TrashIconWhite } from "@/components/admin/icons/TrashIconWhite";
-import { EditButtonOutline } from "@/components/admin/Buttons/EditButtonOutline";
 
 function generateRandomId() {
   return Math.random().toString(36).substr(2, 9);
 }
 
-const subcategories = [
-  { id: generateRandomId(), name: "Электроника" },
-  { id: generateRandomId(), name: "Одежда" },
-  { id: generateRandomId(), name: "Продукты" },
-  { id: generateRandomId(), name: "Спорт" },
-  { id: generateRandomId(), name: "Красота и здоровье" },
-  { id: generateRandomId(), name: "Дом и сад" },
+const users = [
+  { id: generateRandomId(), name: "Admin" },
+  { id: generateRandomId(), name: "Adida" },
+  { id: generateRandomId(), name: "Tynch" },
+  { id: generateRandomId(), name: "Masha" },
+  { id: generateRandomId(), name: "Erjigit" },
+  { id: generateRandomId(), name: "Kiyal" },
+  { id: generateRandomId(), name: "Dastan" },
+  { id: generateRandomId(), name: "AAK AAK" },
 ];
 
-export default function Subcategories() {
+export const FetchUsers = ({ type }) => {
   return (
     <div>
-      <div className={`flex gap-5 bg-admin-green py-2 px-3`}>
-        <OkIcon />
-        <p>Подкатегория Стеновые панели была успешно добавлена</p>
-      </div>
       <div className="flex justify-between items-center my-5">
-        <h2 className={`text-body1`}>Выберите подкатегорию для изменения</h2>
-        <AddButton link={"subcategory"}>Добавить подкатегорию</AddButton>
+        <h2 className={`text-body1`}>
+          {type === "users"
+            ? "Пользователи"
+            : type === "orders"
+              ? "Заказы пользователей"
+              : type === "favorites"
+                ? "Избранные пользователей"
+                : type === "basket"
+                  ? "Корзина пользователей"
+                  : "NULL"}
+        </h2>
       </div>
       <div className="flex items-center justify-start gap-4 my-5">
         <p className={`text-body2`}>Поиск: </p>
@@ -38,7 +42,7 @@ export default function Subcategories() {
           />
           <SearchIcon className="absolute top-0 right-2" />
         </div>
-        <p className={`text-body4`}>Выбрано 0 из {subcategories.length}</p>
+        <p className={`text-body4`}>Выбрано 0 из {users.length}</p>
       </div>
       <table className="w-full text-left border-collapse">
         <thead className="bg-admin-grey">
@@ -47,7 +51,7 @@ export default function Subcategories() {
               <input type="checkbox" />
             </th>
             <th className="px-2">ID</th>
-            <th className="px-2">Податегория</th>
+            <th className="px-2">Имя</th>
             <th className="px-2 flex justify-end">
               <Button className="bg-inherit hover:bg-inherit hover:border-b rounded-none p-0 px-1 duration-700 flex items-center gap-2">
                 <TrashIconWhite /> Удалить
@@ -56,7 +60,7 @@ export default function Subcategories() {
           </tr>
         </thead>
         <tbody>
-          {subcategories.map((item, index) => (
+          {users.map((item, index) => (
             <tr
               key={item.id}
               className={`border-b ${index % 2 === 0 ? "bg-inherit" : "bg-admin-grey"} py-1`}
@@ -65,11 +69,10 @@ export default function Subcategories() {
                 <input type="checkbox" />
               </td>
               <td className="px-2 w-[15%]">{item.id}</td>
-              <td className="px-2 w-[70%]">{item.name}</td>
+              <td className="px-2 w-[70%]  cursor-pointer hover:text-admin-grey-hover duration-700">
+                {item.name}
+              </td>
               <td className="px-2 flex gap-2 w-[12%]">
-                <EditButtonOutline link={"subcategory"}>
-                  Изменить
-                </EditButtonOutline>
                 <Button className="bg-inherit hover:bg-inherit hover:border-b rounded-none p-0 px-1 duration-700 flex items-center gap-2">
                   <TrashIconWhite /> Удалить
                 </Button>
@@ -78,7 +81,7 @@ export default function Subcategories() {
           ))}
         </tbody>
       </table>
-      <div className={`my-5`}>Категорий: {subcategories.length}</div>
+      <div className={`my-5`}>Пользователей: {users.length}</div>
     </div>
   );
-}
+};

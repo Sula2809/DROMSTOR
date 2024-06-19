@@ -12,7 +12,7 @@ export default function CatalogPage() {
   ];
 
   return (
-    <div className={` md:container md:px-10 py-0 md: py-5`}>
+    <div className={` md:container md:px-10 py-0 md:py-5`}>
       <BreadCrumb items={catalogBreadCrumbs} className={`hidden md:block `} />
       <CatalogDesktop className={"hidden md:flex"} />
       <CatalogMobile className={`md:hidden p-0`} />

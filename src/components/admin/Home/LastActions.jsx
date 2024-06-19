@@ -46,14 +46,16 @@ export const LastActions = () => {
         {lastAction.map((el, index) => (
           <li
             key={index}
-            className={`border-b border-b-custom-grey bg-admin-grey flex justify-between px-3 py-1`}
+            className={`border-b border-b-custom-grey bg-admin-grey flex flex-col gap-3 md:flex-row justify-between px-3 py-1`}
           >
             <div className={`flex items-center gap-3`}>
               <AddIcon />
               <h2 className={`text-blue-text text-body3`}>{el.title}</h2>
               <h3 className={`text-c1`}>{el.category}</h3>
             </div>
-            <div className={"flex gap-3 items-center text-custom-grey"}>
+            <div
+              className={"flex gap-3 items-center text-custom-grey justify-end"}
+            >
               <p className={`text-body3`}>{el.time}</p>
               <p className={`text-body3`}>{el.date}</p>
             </div>

@@ -4,7 +4,7 @@ import { LastActions } from "@/components/admin/Home/LastActions";
 
 export const Home = () => {
   return (
-    <div className={`container w-4/5 py-12 space-y-10`}>
+    <div className={`container w-full md:w-4/5 py-12 space-y-10`}>
       <Products />
       <Users />
       <LastActions />

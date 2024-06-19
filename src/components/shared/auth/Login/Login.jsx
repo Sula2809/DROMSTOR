@@ -51,7 +51,7 @@ export const Login = ({ showSignup, close, onAuthChange }) => {
       close(false);
       setIsLoading(false);
     } else {
-      console.log("not-success");
+      console.error("not-success");
     }
   }
 

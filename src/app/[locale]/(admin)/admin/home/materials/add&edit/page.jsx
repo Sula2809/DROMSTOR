@@ -8,14 +8,9 @@ export default function AddEditMaterial() {
   const [action, setAction] = useState("");
 
   useEffect(() => {
-    console.log("hello");
     const storedName = localStorage.getItem("editItem");
     const storedAction = localStorage.getItem("buttonAction");
     const storedMaterial = localStorage.getItem("editMaterial");
-
-    console.log("Stored name: ", storedName);
-    console.log("Stored action: ", storedAction);
-    console.log("Stored material: ", storedMaterial);
 
     if (storedName) setName(storedName);
     if (storedAction) setAction(storedAction);

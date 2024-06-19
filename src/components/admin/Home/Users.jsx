@@ -14,7 +14,9 @@ export const Users = ({ isRoute = true }) => {
   ];
   return (
     <div className={`w-full`}>
-      <Title>Пользователи</Title>
+      <Title className={`text-body3 sm:text-body3 md:text-body2 lg:text-h4`}>
+        Пользователи
+      </Title>
       <ul className={``}>
         {Users.map((el, index) => (
           <li
@@ -25,12 +27,12 @@ export const Users = ({ isRoute = true }) => {
             <p className={`text-blue-text font-bold text-body2`}>{el.name}</p>
             <div className={`flex items-center gap-5`}>
               <div className={`cursor-pointer flex items-center gap-1`}>
-                <AddIcon />
-                {isRoute && <p>Добавить</p>}
+                {isRoute && <AddIcon />}
+                {isRoute && <p className={"hidden md:block"}>Добавить</p>}
               </div>
               <div className={`cursor-pointer flex items-center gap-1`}>
-                <EditIcon />
-                {isRoute && <p>Изменить</p>}
+                {isRoute && <EditIcon />}
+                {isRoute && <p className={"hidden md:block"}>Изменить</p>}
               </div>
             </div>
           </li>

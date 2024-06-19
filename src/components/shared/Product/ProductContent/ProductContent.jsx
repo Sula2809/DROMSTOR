@@ -3,11 +3,14 @@ import FavoriteButton from "@/components/shared/Buttons/FavoriteButton/FavoriteB
 import Image from "next/image";
 import { Counter } from "@/components/shared/Counter/Counter";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { AddCartItems } from "@/shared/services/cart/cart";
+import Cookies from "js-cookie";
 
 export const ProductContent = ({ product }) => {
   const productT = useTranslations("Product");
+  const token = Cookies.get("access_token");
   const [selectedMaterial, setSelectedMaterial] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
 
@@ -17,6 +20,16 @@ export const ProductContent = ({ product }) => {
   const handleColorClick = (index) => {
     setSelectedColor(index);
   };
+  const handleAddCart = (id) => {
+    const addCArt = async (id) => {
+      const res = await AddCartItems(id, token);
+    };
+    addCArt(id);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("access_token", product);
+  }, [product]);
 
   return (
     <div>
@@ -35,10 +48,10 @@ export const ProductContent = ({ product }) => {
         </div>
         <div className="space-y-3">
           <h3 className="text-body2 font-bold text-button">
-            {productT("materials")}
+            {productT("material")}
           </h3>
           <div className="w-full justify-start items-center flex gap-3 relative">
-            {product.materials.map((item, index) => (
+            {product.colors.map((item, index) => (
               <div
                 key={index}
                 className={`item relative w-14 h-14 hover:border-4 hover:border-button cursor-pointer duration-500 ${
@@ -46,12 +59,10 @@ export const ProductContent = ({ product }) => {
                 }`}
                 onClick={() => handleMaterialClick(index)}
               >
-                <Image
-                  src={item}
+                <img
+                  src={item.image}
                   alt={item}
-                  fill
-                  sizes="(max-width: 56px) 100vw, 52px"
-                  className="object-cover"
+                  className="object-cover size-full"
                 />
               </div>
             ))}
@@ -70,12 +81,10 @@ export const ProductContent = ({ product }) => {
                 }`}
                 onClick={() => handleColorClick(index)}
               >
-                <Image
-                  src={item}
+                <img
+                  src={item.image}
                   alt={item}
-                  fill
-                  sizes="(max-width: 56px) 100vw, 52px"
-                  className="object-cover"
+                  className="object-cover size-full"
                 />
               </div>
             ))}
@@ -83,7 +92,10 @@ export const ProductContent = ({ product }) => {
         </div>
         <div className="flex items-center gap-5">
           <Counter classname="mt-0" />
-          <Button className="bg-button rounded-sm hover:bg-border_brown active:scale-[0.95]">
+          <Button
+            className="bg-button rounded-sm hover:bg-border_brown active:scale-[0.95]"
+            onClick={() => handleAddCart(product.id)}
+          >
             {productT("addCart")}
           </Button>
         </div>
@@ -95,13 +107,9 @@ export const ProductContent = ({ product }) => {
           {productT("description")}
         </h2>
         <div className="space-y-5 md:space-y-12 ">
-          {product.descriptions.map((item, index) => (
-            <div key={index} className="space-y-1 md:space-y-5">
-              <p className="text-body4 md:text-body1 font-normal text-button">
-                {item.text}
-              </p>
-            </div>
-          ))}
+          <p className="text-body4 md:text-body1 font-normal text-button">
+            {product.description}
+          </p>
         </div>
       </div>
     </div>

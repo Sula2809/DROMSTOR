@@ -4,14 +4,44 @@ import { Counter } from "@/components/shared/Counter/Counter";
 import { Empty } from "@/components/shared/Drawers/Empty/Empty";
 import { useRouter } from "next/navigation";
 import { SheetClose } from "@/components/ui/sheet";
-import favorites from "@/components/shared/Cart/favorites.json";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import { GetCartItems } from "@/shared/services/cart/cart";
+import { GetFavoritesItems } from "@/shared/services/favorites/favorites";
+import Cookie from "js-cookie";
+import { NotAuth } from "@/components/shared/Drawers/NotAuth/NotAuth";
 
 export const DrawerContent = ({ isCart = false }) => {
-  const isEmpty = false;
+  const [cartItems, setCartItems] = useState([]);
+  const [favoritesItems, setFavoritesItems] = useState([]);
+  const [isAuth, setIsAuth] = useState(false);
+
   const router = useRouter();
   const t = useTranslations();
 
+  const token = Cookie.get("access_token");
+
+  const fetchDrawersData = async () => {
+    const cartData = await GetCartItems(token);
+    const favoritesData = await GetFavoritesItems(token);
+    if (cartData === 200) {
+      setCartItems(cartData);
+    }
+    if (favoritesData === 200) {
+      setFavoritesItems(favoritesData);
+    }
+  };
+
+  useEffect(() => {
+    if (token) {
+      setIsAuth(true);
+      fetchDrawersData();
+    }
+  }, []);
+
+  if (!isAuth) {
+    return <NotAuth />;
+  }
   return (
     <div className={`w-full h-full space-y-5`}>
       <h2
@@ -19,15 +49,15 @@ export const DrawerContent = ({ isCart = false }) => {
       >
         {isCart ? t("Drawers.cart") : t("Drawers.favorites")}
       </h2>
-      {isEmpty ? (
-        <Empty isCart={false} />
+      {cartItems.length < 1 ? (
+        <Empty isCart={isCart} />
       ) : (
         <div className={`h-full`}>
           <div
             className={`h-[580px] md:h-[690px] lg:h-[720px] overflow-y-scroll pr-10`}
           >
             <div className={`space-y-5`}>
-              {favorites.map((item, index) => (
+              {cartItems.map((item, index) => (
                 <div key={index} className={`flex justify-between`}>
                   <div className={`w-1/5 md:w-[30%]`}>
                     <img src={item.img} alt={`image${index}`} />

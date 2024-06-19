@@ -60,7 +60,7 @@ export const Signup = ({ showLogin, close }) => {
       showLogin(true);
       setIsLoading(false);
     } else {
-      console.log("not success");
+      console.error("not success");
     }
   }
 

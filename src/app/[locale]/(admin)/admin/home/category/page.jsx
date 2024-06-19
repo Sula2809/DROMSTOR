@@ -29,10 +29,14 @@ export default function CategoryPage() {
     <div>
       <div className={`flex gap-5 bg-admin-green py-2 px-3`}>
         <OkIcon />
-        <p>Категория Стеновые панели была успешно добавлена</p>
+        <p className={`text-body3`}>
+          Категория Стеновые панели была успешно добавлена
+        </p>
       </div>
       <div className="flex justify-between items-center my-5">
-        <h2 className={`text-body1`}>Выберите категорию для изменения</h2>
+        <h2 className={`text-body3 sm:text-body2 md:text-body1`}>
+          Выберите категорию для изменения
+        </h2>
         <AddButton link={"category"}>Добавить категорию</AddButton>
       </div>
       <div className="flex items-center justify-start gap-4 my-5">
@@ -40,7 +44,7 @@ export default function CategoryPage() {
         <div className="relative">
           <input
             type="text"
-            className="border border-white rounded-full text-body2 px-3 py-1 bg-inherit"
+            className="border border-white rounded-full text-body2 px-3 py-1 bg-inherit max-w-40 md:max-w-96"
           />
           <SearchIcon className="absolute top-0 right-2" />
         </div>
@@ -76,8 +80,8 @@ export default function CategoryPage() {
                 <EditButtonOutline name={item.name} link={"category"}>
                   Изменить
                 </EditButtonOutline>
-                <Button className="bg-inherit hover:bg-inherit hover:border-b rounded-none p-0 px-1 duration-700 flex items-center gap-2">
-                  <TrashIconWhite /> Удалить
+                <Button className="flex bg-inherit hover:bg-inherit hover:border-b rounded-none p-0 px-1 duration-700 items-center gap-2">
+                  <TrashIconWhite /> <p className={`hidden sm:flex`}>Удалить</p>
                 </Button>
               </td>
             </tr>

@@ -1,3 +1,3 @@
-const baseURL = process.env.NEXT_PUBLIC_API_URL
+const baseURL = "http://176.126.164.168/";
 
-export { baseURL }
+export { baseURL };

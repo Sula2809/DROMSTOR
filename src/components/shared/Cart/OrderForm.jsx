@@ -41,7 +41,6 @@ export const OrderForm = () => {
   });
 
   async function onSubmit(data) {
-    console.log("done", data);
     router.push(`/cart/orderSuccess`);
   }
   return (

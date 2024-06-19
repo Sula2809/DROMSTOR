@@ -17,7 +17,7 @@ export const Products = ({ isRoute = true }) => {
   ];
   return (
     <div className={`w-full`}>
-      <Title>Товары</Title>
+      <Title className={`text-body3 md:text-h4`}>Товары</Title>
       <ul className={``}>
         {AdminProducts.map((product, index) => (
           <li
@@ -33,15 +33,15 @@ export const Products = ({ isRoute = true }) => {
                 className={`cursor-pointer flex items-center gap-1`}
                 onClick={() => router.push("/admin/home/category/add")}
               >
-                <AddIcon />
-                {isRoute && <p>Добавить</p>}
+                {isRoute && <AddIcon />}
+                {isRoute && <p className={"hidden md:block"}>Добавить</p>}
               </div>
               <div
                 className={`cursor-pointer flex items-center gap-1`}
                 onClick={() => router.push("/admin/home/category/add")}
               >
-                <EditIcon />
-                {isRoute && <p>Изменить</p>}
+                {isRoute && <EditIcon />}
+                {isRoute && <p className={"hidden md:block"}>Изменить</p>}
               </div>
             </div>
           </li>

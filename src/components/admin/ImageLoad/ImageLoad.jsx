@@ -21,7 +21,6 @@ export const ImageLoad = () => {
     const material = localStorage.getItem("editMaterial"); // Updated key to "editMaterial"
     if (material) {
       setPreviewImage(material);
-      console.log();
     }
   }, []);
 

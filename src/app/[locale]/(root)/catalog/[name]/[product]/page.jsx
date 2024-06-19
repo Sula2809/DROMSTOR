@@ -5,12 +5,17 @@ import { ProductImages } from "@/components/shared/Product/ProductImages/Product
 import { useEffect } from "react";
 import { ProductContent } from "@/components/shared/Product/ProductContent/ProductContent";
 import { useTranslations } from "next-intl";
+import productStores, {
+  useGetSingleProductStore,
+} from "@/shared/services/store/Products.store";
 
 export default function ProductPage({ params }) {
+  const { productItem, fetchSingleProduct, isLoadingItem } =
+    productStores.useGetSingleProductStore();
   const breadCrumbs = useTranslations("BreadCrumbs");
-  const productName = decodeURL(params.product);
+  const productID = decodeURL(params.product);
   const categoryName = decodeURL(params.name);
-  const product = JSON.parse(localStorage.getItem("product"));
+
   const productBreadCrumbs = [
     { name: breadCrumbs("home"), link: "/" },
     { name: breadCrumbs("catalog"), link: "/catalog" },
@@ -19,23 +24,34 @@ export default function ProductPage({ params }) {
       link: `/catalog/${categoryName}`,
     },
     {
-      name: productName,
-      link: `/catalog/${categoryName}/${productName}`,
+      name: productID,
+      link: `/catalog/${categoryName}/${productID}`,
     },
   ];
+
   useEffect(() => {
-    console.log(product);
-  }, []);
+    const fetchData = async () => {
+      try {
+        await fetchSingleProduct(productID);
+      } catch (error) {
+        console.error("Failed to fetch data", error);
+      }
+    };
+
+    fetchData().catch((error) =>
+      console.error("Failed to execute fetchData", error),
+    );
+  }, [fetchSingleProduct, productID]);
 
   return (
     <div className={`container py-6`}>
       <BreadCrumb items={productBreadCrumbs} className={`hidden md:block `} />
       <div className={`pt-8 flex flex-col md:flex-row gap-12`}>
         <div className={`w-full md:w-[45%]`}>
-          <ProductImages images={product.img} />
+          {productItem && <ProductImages images={productItem.images} />}
         </div>
         <div className={`w-full md:w-[65%]`}>
-          <ProductContent product={product} />
+          {productItem && <ProductContent product={productItem} />}
         </div>
       </div>
     </div>
