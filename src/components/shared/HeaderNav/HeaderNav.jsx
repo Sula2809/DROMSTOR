@@ -19,6 +19,10 @@ export const HeaderNav = () => {
   if (!categoryData) {
     return <div className={`bg-button-hover h-16 w-full`}></div>;
   }
+  const handleClick = (category) => {
+    localStorage.setItem("category", category.id);
+    router.push(`/catalog/${category.name}`);
+  };
 
   return (
     <div className={`w-full bg-foreground flex justify-center`}>
@@ -35,16 +39,16 @@ export const HeaderNav = () => {
       {/*</ul>*/}
       <Carousel className="w-4/5">
         <CarouselContent className="-ml-1 gap-0">
-          {categoryData?.results?.map((category, index) => (
+          {categoryData?.map((category, index) => (
             <CarouselItem
               key={index}
               className="pl-1 md:basis-1/2 lg:basis-1/6 justify-center p-0 flex"
             >
               <div
                 className=" text-white whitespace-nowrap truncate w-full cursor-pointer text-center hover:bg-background hover:text-black_text p-0"
-                onClick={() => router.push(`/catalog/${category.name}`)}
+                onClick={() => handleClick(category)}
               >
-                {category.name}
+                {locale === "ru" ? category.name : category.name_en}
               </div>
             </CarouselItem>
           ))}

@@ -1,45 +1,82 @@
 "use client";
 import FavoriteButton from "@/components/shared/Buttons/FavoriteButton/FavoriteButton";
-import Image from "next/image";
 import { Counter } from "@/components/shared/Counter/Counter";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { AddCartItems } from "@/shared/services/cart/cart";
-import Cookies from "js-cookie";
+import { useAuth } from "@/shared/Providers/AuthProvider";
+import { AddFavoriteItem } from "@/shared/services/favorites/favorites";
+import { error } from "next/dist/build/output/log";
 
-export const ProductContent = ({ product }) => {
+export const ProductContent = ({ product, reFunc }) => {
   const productT = useTranslations("Product");
-  const token = Cookies.get("access_token");
+  const locale = useLocale();
+  const { token } = useAuth();
   const [selectedMaterial, setSelectedMaterial] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
 
   const handleMaterialClick = (index) => {
     setSelectedMaterial(index);
   };
+
   const handleColorClick = (index) => {
     setSelectedColor(index);
   };
+
   const handleAddCart = (id) => {
-    const addCArt = async (id) => {
-      const res = await AddCartItems(id, token);
-    };
-    addCArt(id);
+    if (token) {
+      const data = { colors: [selectedColor, 3] };
+      const addCart = async (id) => {
+        try {
+          const res = await AddCartItems(id, token, data);
+          console.log("Add to cart response: ", res);
+        } catch (error) {
+          console.error("Error adding to cart: ", error);
+        }
+      };
+      addCart(id);
+    } else {
+      localStorage.setItem("message", "Для начала нужно войти в систему");
+      const event = new Event("showLogin");
+      window.dispatchEvent(event);
+    }
+  };
+
+  const handleAddToFavorite = () => {
+    if (!token) {
+      localStorage.setItem("message", "Для начала нужно войти в систему");
+      const event = new Event("showLogin");
+      window.dispatchEvent(event);
+    } else {
+      const addFavorite = async (id = product.id) => {
+        const response = await AddFavoriteItem(token, id);
+        if (response) {
+          console.log("added");
+        } else {
+          error();
+        }
+      };
+      addFavorite();
+    }
   };
 
   useEffect(() => {
-    localStorage.setItem("access_token", product);
-  }, [product]);
+    console.log("pto: ", product);
+  }, []);
 
   return (
     <div>
       <div className="space-y-8">
         <div className="space-y-3">
           <div className="w-full justify-between items-center flex relative">
-            <h1 className="text-h4 font-bold text-button">{product.name}</h1>
+            <h1 className="text-h4 font-bold text-button">
+              {locale === "ru" ? product.title : product.title_en}
+            </h1>
             <FavoriteButton
               item={product.isInFavorite}
               classname="border border-button"
+              addToFavorite={handleAddToFavorite}
             />
           </div>
           <p className="text-body1 font-normal text-button">
@@ -51,7 +88,7 @@ export const ProductContent = ({ product }) => {
             {productT("material")}
           </h3>
           <div className="w-full justify-start items-center flex gap-3 relative">
-            {product.colors.map((item, index) => (
+            {product.fabrics.map((item, index) => (
               <div
                 key={index}
                 className={`item relative w-14 h-14 hover:border-4 hover:border-button cursor-pointer duration-500 ${

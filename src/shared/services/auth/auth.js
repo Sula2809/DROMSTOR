@@ -16,6 +16,7 @@ export const login = async (data) => {
   try {
     const response = await api.post(`login/`, data);
     const { access_token, refresh_token, role } = response.data;
+    console.log("role: ", role);
     Cookies.set("access_token", access_token, { httpOnly: false });
     Cookies.set("refresh_token", refresh_token, { httpOnly: false });
     Cookies.set("role", role, { httpOnly: false });

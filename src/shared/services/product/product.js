@@ -10,7 +10,6 @@ export const GetAllProducts = async (
   page,
 ) => {
   const params = new URLSearchParams();
-  console.log(colors, min_price, max_price, category, subcategory);
   if (title) params.append("title", title);
   if (colors) params.append("colors", colors);
   if (min_price) params.append("min_price", min_price);

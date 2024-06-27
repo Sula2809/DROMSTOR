@@ -15,10 +15,28 @@ export const GetColors = async () => {
   }
 };
 
-export const AddColors = async () => {
-  return await api.post("colors/");
+export const AddColors = async (token, data) => {
+  return await api.post("colors/", data, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "multipart/form-data",
+    },
+  });
 };
 
 export const DeleteColors = async (token, id) => {
-  return await api.post(`colors/${id}`);
+  return await api.delete(`colors/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+export const EditColors = async (token, data, id) => {
+  return await api.patch(`colors/${id}/`, data, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "multipart/form-data",
+    },
+  });
 };

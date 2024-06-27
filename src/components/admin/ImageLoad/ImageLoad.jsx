@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export const ImageLoad = () => {
+export const ImageLoad = ({ setFunction, reset }) => {
   const [previewImage, setPreviewImage] = useState(null);
 
   const handleFileChange = (e) => {
@@ -10,17 +10,28 @@ export const ImageLoad = () => {
       const reader = new FileReader();
       reader.onloadend = () => {
         setPreviewImage(reader.result);
+        setFunction(file); // Передача файла в родительский компонент
       };
       reader.readAsDataURL(file);
     } else {
       setPreviewImage(null);
+      setFunction(null); // Сброс файла в родительском компоненте
     }
   };
 
   useEffect(() => {
-    const material = localStorage.getItem("editMaterial"); // Updated key to "editMaterial"
-    if (material) {
-      setPreviewImage(material);
+    if (reset) {
+      setPreviewImage(null);
+    }
+  }, [reset]);
+
+  useEffect(() => {
+    const storedAction = localStorage.getItem("buttonAction");
+    if (storedAction === "edit") {
+      const img = localStorage.getItem("img");
+      if (img) setPreviewImage(img);
+    } else {
+      setPreviewImage(null);
     }
   }, []);
 

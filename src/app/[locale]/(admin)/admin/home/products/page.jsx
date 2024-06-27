@@ -1,22 +1,27 @@
+"use client";
 import { OkIcon } from "@/components/admin/icons/OkIcon";
 import { SearchIcon } from "@/components/admin/icons/SearchIcon";
 import { Button } from "@/components/ui/button";
 import { TrashIconWhite } from "@/components/admin/icons/TrashIconWhite";
 import { AddButton } from "@/components/admin/Buttons/AddButton";
 import { EditButtonOutline } from "@/components/admin/Buttons/EditButtonOutline";
-
-function generateRandomId() {
-  return Math.random().toString(36).substr(2, 9);
-}
-
-const products = [
-  { id: generateRandomId(), name: "Доска", category: "деревянные панели" },
-  { id: generateRandomId(), name: "Бетон", category: "цементные изделия" },
-  { id: generateRandomId(), name: "Клей", category: "концтовары" },
-  { id: generateRandomId(), name: "Скотч", category: "концтовары" },
-];
+import productsStore from "@/shared/services/store/Products.store";
+import { useEffect } from "react";
 
 export default function ProductPage() {
+  const { productsData, isLoadingProducts, fetchAllProducts } =
+    productsStore.useGetAllProductsStore();
+
+  const deleteProduct = async (id) => {
+    const res = await DeleteProduct(token, id);
+  };
+
+  useEffect(() => {
+    fetchAllProducts();
+    localStorage.removeItem("productID");
+    localStorage.removeItem("buttonAction");
+  }, []);
+
   return (
     <div>
       <div className={`flex gap-5 bg-admin-green py-2 px-3`}>
@@ -36,7 +41,9 @@ export default function ProductPage() {
           />
           <SearchIcon className="absolute top-0 right-2" />
         </div>
-        <p className={`text-body4`}>Выбрано 0 из {products.length}</p>
+        <p className={`text-body4`}>
+          Выбрано 0 из {productsData?.results?.length}
+        </p>
       </div>
       <table className="w-full text-left border-collapse">
         <thead className="bg-admin-grey">
@@ -55,7 +62,7 @@ export default function ProductPage() {
           </tr>
         </thead>
         <tbody>
-          {products.map((item, index) => (
+          {productsData?.results?.map((item, index) => (
             <tr
               key={item.id}
               className={`border-b ${index % 2 === 0 ? "bg-inherit" : "bg-admin-grey"} py-1`}
@@ -64,10 +71,12 @@ export default function ProductPage() {
                 <input type="checkbox" />
               </td>
               <td className="px-2 w-[15%]">{item.id}</td>
-              <td className="px-2 w-[50%]">{item.name}</td>
-              <td className="px-2 w-[20%]">{item.category}</td>
+              <td className="px-2 w-[50%]">
+                {item.title}, {item.price}сом
+              </td>
+              <td className="px-2 w-[20%]">{item.category.name}</td>
               <td className="px-2 flex gap-2 w-[12%]">
-                <EditButtonOutline link={"products"} name={item.name}>
+                <EditButtonOutline link={"products"} productID={item.id}>
                   Изменить
                 </EditButtonOutline>
                 <Button className="bg-inherit hover:bg-inherit hover:border-b rounded-none p-0 px-1 duration-700 flex items-center gap-2">
@@ -78,7 +87,7 @@ export default function ProductPage() {
           ))}
         </tbody>
       </table>
-      <div className={`my-5`}>Категорий: {products.length}</div>
+      <div className={`my-5`}>Категорий: {productsData?.results?.length}</div>
     </div>
   );
 }

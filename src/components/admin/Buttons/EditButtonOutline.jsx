@@ -2,26 +2,44 @@
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { EditIconWhite } from "@/components/admin/icons/EditIconWhite";
+import { useAuth } from "@/shared/Providers/AuthProvider";
 
 export const EditButtonOutline = ({
   children,
   link,
-  material,
+  img,
   productID,
-  productName,
+  name,
+  name_en,
 }) => {
   const router = useRouter();
-
+  const { token } = useAuth();
   const handleButtonClick = () => {
+    console.log("token", token);
+
+    localStorage.removeItem("buttonAction");
+    localStorage.removeItem("img");
+    localStorage.removeItem("productID");
+    localStorage.removeItem("name");
+    localStorage.removeItem("name_en");
+    // localStorage.removeItem("buttonAction");
+
     localStorage.setItem("buttonAction", "edit");
-    if (material) {
-      localStorage.setItem("editMaterial", material); // Updated key to "editMaterial"
+    if (img) {
+      console.log(img);
+      localStorage.setItem("img", img);
     }
     if (productID) {
+      console.log(productID);
       localStorage.setItem("productID", productID);
     }
-    if (productName) {
-      localStorage.setItem("productName", productName);
+    if (name) {
+      console.log(name);
+      localStorage.setItem("name", name);
+    }
+    if (name_en) {
+      console.log(name_en);
+      localStorage.setItem("name_en", name_en);
     }
     router.push(`/admin/home/${link}/add&edit`);
   };

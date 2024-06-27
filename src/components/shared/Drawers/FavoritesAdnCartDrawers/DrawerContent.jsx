@@ -8,40 +8,45 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { GetCartItems } from "@/shared/services/cart/cart";
 import { GetFavoritesItems } from "@/shared/services/favorites/favorites";
-import Cookie from "js-cookie";
 import { NotAuth } from "@/components/shared/Drawers/NotAuth/NotAuth";
+import { useAuth } from "@/shared/Providers/AuthProvider";
 
 export const DrawerContent = ({ isCart = false }) => {
-  const [cartItems, setCartItems] = useState([]);
-  const [favoritesItems, setFavoritesItems] = useState([]);
-  const [isAuth, setIsAuth] = useState(false);
+  const [mappingData, setMappingData] = useState([]);
+  const { token } = useAuth();
 
   const router = useRouter();
   const t = useTranslations();
 
-  const token = Cookie.get("access_token");
-
   const fetchDrawersData = async () => {
-    const cartData = await GetCartItems(token);
-    const favoritesData = await GetFavoritesItems(token);
-    if (cartData === 200) {
-      setCartItems(cartData);
+    console.log("function");
+    if (isCart) {
+      const drawerData = await GetCartItems(token);
+      if (drawerData) {
+        console.log("cart");
+      }
     }
-    if (favoritesData === 200) {
-      setFavoritesItems(favoritesData);
+    if (!isCart) {
+      const drawerData = await GetFavoritesItems(token);
+      if (drawerData) {
+        console.log("favorite", drawerData);
+        setMappingData(drawerData.fav_products);
+      }
     }
   };
 
+  const deleteFromDrawer = () => {};
+
   useEffect(() => {
     if (token) {
-      setIsAuth(true);
       fetchDrawersData();
     }
-  }, []);
+  }, [token]);
 
-  if (!isAuth) {
+  if (!token) {
     return <NotAuth />;
   }
+
   return (
     <div className={`w-full h-full space-y-5`}>
       <h2
@@ -49,7 +54,7 @@ export const DrawerContent = ({ isCart = false }) => {
       >
         {isCart ? t("Drawers.cart") : t("Drawers.favorites")}
       </h2>
-      {cartItems.length < 1 ? (
+      {mappingData.length < 1 ? (
         <Empty isCart={isCart} />
       ) : (
         <div className={`h-full`}>
@@ -57,16 +62,20 @@ export const DrawerContent = ({ isCart = false }) => {
             className={`h-[580px] md:h-[690px] lg:h-[720px] overflow-y-scroll pr-10`}
           >
             <div className={`space-y-5`}>
-              {cartItems.map((item, index) => (
+              {mappingData?.map((item, index) => (
                 <div key={index} className={`flex justify-between`}>
-                  <div className={`w-1/5 md:w-[30%]`}>
-                    <img src={item.img} alt={`image${index}`} />
+                  <div className={`w-1/5 md:w-[30%] h-[200px]`}>
+                    <img
+                      src={item.images[0].image}
+                      alt={`image${index}`}
+                      className={`size-full`}
+                    />
                   </div>
                   <div className={`flex flex-col w-1/2`}>
                     <h2
                       className={`text-body3 md:text-body2 font-normal text-button pb-2`}
                     >
-                      {item.title + index}
+                      {item.title}
                     </h2>
                     <div className={`flex md:flex-col justify-between gap-4`}>
                       <p
@@ -83,6 +92,7 @@ export const DrawerContent = ({ isCart = false }) => {
                   <Button
                     className={`underline p-0 h-5 text-button hover:bg-inherit hover:text-border_brown duration-300`}
                     variant={"ghost"}
+                    onClick={deleteFromDrawer}
                   >
                     {t("Buttons.delete")}
                   </Button>

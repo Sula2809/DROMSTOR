@@ -43,6 +43,10 @@ export default function ProductPage({ params }) {
     );
   }, [fetchSingleProduct, productID]);
 
+  useEffect(() => {
+    console.log("data: ", productItem);
+  }, [productItem]);
+
   return (
     <div className={`container py-6`}>
       <BreadCrumb items={productBreadCrumbs} className={`hidden md:block `} />

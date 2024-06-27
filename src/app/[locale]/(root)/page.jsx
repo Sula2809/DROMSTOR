@@ -12,14 +12,30 @@ export default function IndexPage({ params: { locale } }) {
   return (
     <main>
       <Swiper />
-      {categoryData?.results?.map((category, index) => (
-        <div key={index}>
-          {index % 2 === 0 ? (
-            <Mosaic2 title={category.name} />
-          ) : (
-            <Mosaic1 title={category.name} />
-          )}
-          {index % 2 === 0 ? <Popular /> : <NewProducts />}
+      {categoryData?.map((category, index) => (
+        <div key={category.id}>
+          {index % 2 === 0 &&
+            category.subcategories &&
+            category.subcategories.length > 0 && (
+              <>
+                <Mosaic2
+                  title={locale === "ru" ? category.name : category.name_en}
+                  id={category.id}
+                />
+                <Popular />
+              </>
+            )}
+          {index % 2 !== 0 &&
+            category.subcategories &&
+            category.subcategories.length > 0 && (
+              <>
+                <Mosaic1
+                  title={locale === "ru" ? category.name : category.name_en}
+                  id={category.id}
+                />
+                <NewProducts />
+              </>
+            )}
         </div>
       ))}
     </main>

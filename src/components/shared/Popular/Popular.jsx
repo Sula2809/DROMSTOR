@@ -1,12 +1,8 @@
 import {
   Carousel,
-  CarouselContent,
-  CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import data from "./recomendationCarousel.json";
-import { TextOnHover } from "@/components/shared/TextOnHover/TextOnHover";
 import Autoplay from "embla-carousel-autoplay";
 import { PopularContent } from "@/components/shared/Popular/PopularContent";
 

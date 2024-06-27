@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/select";
 import { AddOutline } from "@/components/admin/Buttons/AddOutline";
 
-export const SelectSubCategory = ({ label }) => {
+export const SelectSubCategory = ({ label, setSubCategory, data }) => {
   return (
     <div
       className={`flex items-center w-full border-b border-b-admin-grey-hover pb-5`}
@@ -23,10 +23,15 @@ export const SelectSubCategory = ({ label }) => {
             className={`bg-admin-blue-hover text-white font-bold `}
           >
             <SelectGroup className={`bg-inherit`}>
-              <SelectItem value="ru">подкатегорию</SelectItem>
-              <SelectItem value="en">подкатегорию</SelectItem>
-              <SelectItem value="en">подкатегорию</SelectItem>
-              <SelectItem value="en">подкатегорию</SelectItem>
+              {data?.map((item) => (
+                <SelectItem
+                  value={item.id}
+                  key={item.id}
+                  onClick={() => setCategory(item.id)}
+                >
+                  {item.name}
+                </SelectItem>
+              ))}
             </SelectGroup>
           </SelectContent>
         </Select>
