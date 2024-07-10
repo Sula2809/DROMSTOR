@@ -5,7 +5,7 @@ import {
 } from "@/shared/services/product/product";
 
 const useGetAllProductsStore = create((set) => ({
-  productsData: null,
+  productsData: [],
   isLoadingProducts: false,
   errorsProducts: [],
   fetchAllProducts: async (
@@ -19,8 +19,6 @@ const useGetAllProductsStore = create((set) => ({
   ) => {
     set({ isLoadingProducts: true });
     try {
-      console.log("hello");
-
       const res = await GetAllProducts(
         title,
         colors,
@@ -31,7 +29,6 @@ const useGetAllProductsStore = create((set) => ({
         page,
       );
       if (res || res.status === 200) {
-        console.log(res);
         set({
           productsData: res.data ? res.data : res.results ? res : res,
           isLoadingProducts: false,

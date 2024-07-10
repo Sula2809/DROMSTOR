@@ -11,10 +11,12 @@ import { Signup } from "@/components/shared/auth/Signup/Signup";
 import { Login } from "@/components/shared/auth/Login/Login";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/shared/Providers/AuthProvider";
 
 export const UserProfile = () => {
   const t = useTranslations("Auth");
   const router = useRouter();
+  const { setToken } = useAuth();
 
   const [isAuth, setIsAuth] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
@@ -22,9 +24,29 @@ export const UserProfile = () => {
   const [role, setRole] = useState("");
 
   useEffect(() => {
-    setIsAuth(!!Cookies.get("access_token"));
-    setRole(Cookies.get("role"));
-  }, [showLogin]);
+    const token = Cookies.get("access_token");
+    const userRole = Cookies.get("role");
+    setIsAuth(!!token);
+    setRole(userRole);
+
+    const handleShowLogin = () => {
+      setShowLogin(true);
+    };
+
+    window.addEventListener("showLogin", handleShowLogin);
+    window.addEventListener("tokenChange", () => {
+      setIsAuth(!!Cookies.get("access_token"));
+      setRole(Cookies.get("role"));
+    });
+
+    return () => {
+      window.removeEventListener("showLogin", handleShowLogin);
+      window.removeEventListener("tokenChange", () => {
+        setIsAuth(!!Cookies.get("access_token"));
+        setRole(Cookies.get("role"));
+      });
+    };
+  }, []);
 
   const handleLoginClick = () => {
     setShowSignup(false);
@@ -41,6 +63,9 @@ export const UserProfile = () => {
     Cookies.remove("refresh_token");
     Cookies.remove("role");
     setIsAuth(false);
+    setToken(null); // Обновите контекст
+    setRole(""); // Сбросьте роль
+    window.dispatchEvent(new Event("tokenChange")); // Вызовите событие для обновления состояния
   };
 
   const handleAdminDashboard = () => {
@@ -94,7 +119,14 @@ export const UserProfile = () => {
         <Login
           showSignup={handleSignupClick}
           close={setShowLogin}
-          onAuthChange={setIsAuth}
+          onAuthChange={(isAuthenticated) => {
+            setIsAuth(isAuthenticated);
+            const token = Cookies.get("access_token");
+            const role = Cookies.get("role");
+            setToken(token); // Обновите контекст
+            setRole(role); // Обновите роль
+            window.dispatchEvent(new Event("tokenChange")); // Вызовите событие для обновления состояния
+          }}
         />
       )}
       {showSignup && (

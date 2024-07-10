@@ -13,3 +13,15 @@ export const GetFavoritesItems = async (token) => {
     throw error;
   }
 };
+
+export const AddFavoriteItem = async (token, id) => {
+  try {
+    const response = await api.post(`products/${id}/favorite_add/`, null, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  } catch (error) {
+    console.error("Error to add favorite item", error);
+  }
+};

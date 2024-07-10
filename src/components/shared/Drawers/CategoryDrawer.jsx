@@ -4,6 +4,8 @@ import { SubCategoryDrawer } from "./SubCategoryDrawer";
 import { cn } from "@/lib/utils";
 import useGetAllCategoriesStore from "@/shared/services/store/AllCategories.store";
 import useGetSubCategoriesStore from "@/shared/services/store/SubCategories.store";
+import useGetSubSubCategoriesStore from "@/shared/services/store/SubSubCategories.store";
+import { useLocale } from "next-intl";
 
 const categories = [
   { id: 1, name: "Категория 1" },
@@ -42,10 +44,14 @@ const subCategories = {
 };
 
 export const CategoryDrawer = ({ className }) => {
+  const locale = useLocale();
+
   const { categoryData, isLoading: categoryLoading } =
     useGetAllCategoriesStore();
   const { subCategoryData, isLoading: subcategoryLoading } =
     useGetSubCategoriesStore();
+
+  const { subSubCategoryData, isLoadingSubSub } = useGetSubSubCategoriesStore();
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState(null);
@@ -129,14 +135,25 @@ export const CategoryDrawer = ({ className }) => {
         duration={1000}
       >
         <ul>
-          {subCategories[activeCategory?.id]?.map((subItem, subIndex) => (
+          {/*{subCategories[activeCategory?.id]?.map((subItem, subIndex) => (*/}
+          {/*  <li*/}
+          {/*    key={subIndex}*/}
+          {/*    onMouseEnter={() => openSubNestedDrawer(subItem)}*/}
+          {/*    onClick={() => openSubNestedDrawer(subItem)}*/}
+          {/*    className="p-2 border-b cursor-pointer"*/}
+          {/*  >*/}
+          {/*    {subItem?.name}*/}
+          {/*  </li>*/}
+          {/*))}*/}
+
+          {subCategoryData?.results?.map((subItem, subIndex) => (
             <li
               key={subIndex}
               onMouseEnter={() => openSubNestedDrawer(subItem)}
               onClick={() => openSubNestedDrawer(subItem)}
               className="p-2 border-b cursor-pointer"
             >
-              {subItem?.name}
+              {locale === "ru" ? subItem?.name : subItem?.name_en}
             </li>
           ))}
         </ul>
@@ -148,8 +165,11 @@ export const CategoryDrawer = ({ className }) => {
         duration={1000}
       >
         <div>
-          <h2>{activeSubCategory?.name}</h2>
-          <p>Содержание для {activeSubCategory?.name}</p>
+          {subSubCategoryData?.results?.map((subItem, subIndex) => (
+            <div key={subIndex} className={"p-2 border-b cursor-pointer"}>
+              {locale === "ru" ? subItem?.name : subItem?.name_en}
+            </div>
+          ))}
         </div>
       </SubCategoryDrawer>
     </div>

@@ -85,10 +85,10 @@
     "new": "Новый",
     "recommended": "Рекомендуем",
     "currency": "Сом",
-    "material": "Material",
-    "color": "Color",
-    "addCart": "Add to cart",
-    "description": "Description"
+    "material": "Материалы",
+    "color": "Цвета",
+    "addCart": "Добавить в корзину",
+    "description": "Описание"
   },
   "Sort": {
     "title": "Отсортировать",

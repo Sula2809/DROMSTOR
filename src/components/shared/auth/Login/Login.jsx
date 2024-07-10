@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { XIcon } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { login } from "@/shared/services/auth/auth";
 import { ThreeDots } from "react-loader-spinner";
 import { useTranslations } from "next-intl";
@@ -35,6 +35,8 @@ const FormSchema = z.object({
 export const Login = ({ showSignup, close, onAuthChange }) => {
   const t = useTranslations("Auth");
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+
   const form = useForm({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -54,6 +56,13 @@ export const Login = ({ showSignup, close, onAuthChange }) => {
       console.error("not-success");
     }
   }
+
+  useEffect(() => {
+    const message = localStorage.getItem("message");
+    if (message) {
+      setErrorMessage(message);
+    }
+  }, []);
 
   return (
     <div
@@ -75,10 +84,21 @@ export const Login = ({ showSignup, close, onAuthChange }) => {
                   className="max-w-[140px]"
                 />
               </div>
-              <div className="cursor-pointer" onClick={() => close(false)}>
+              <div
+                className="cursor-pointer"
+                onClick={() => {
+                  close(false);
+                  localStorage.removeItem("message");
+                }}
+              >
                 <XIcon className="text-black" />
               </div>
             </div>
+            {errorMessage && (
+              <p className={"text-body1 text-red-500 text-center"}>
+                {errorMessage}
+              </p>
+            )}
             <h3 className={`text-black text-h3 font-bold text-center`}>
               {t("login")}
             </h3>

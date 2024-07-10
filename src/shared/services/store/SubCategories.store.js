@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { GetAllSubcategory } from "@/shared/services/categories/category";
 
 const useGetSubCategoriesStore = create((set) => ({
-  subCategoryData: {} || null,
+  subCategoryData: undefined,
   isLoading: false,
   errors: [],
   fetchSubCategories: async () => {

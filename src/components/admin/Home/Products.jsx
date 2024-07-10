@@ -14,6 +14,7 @@ export const Products = ({ isRoute = true }) => {
     { name: "Изображение продукта", link: "/admin/home/images" },
     { name: "Материал", link: "/admin/home/materials" },
     { name: "Цвета", link: "/admin/home/colors" },
+    { name: "Продукты в интерьере", link: "/admin/home/mainImages" },
   ];
   return (
     <div className={`w-full`}>
